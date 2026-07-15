@@ -149,7 +149,7 @@ export const dictionary = {
       chooseService: "Choose a service"
     },
     pages: {
-      aboutTitle: "About the Office",
+      aboutTitle: "Legal Representation & Advisory",
       servicesTitle: "Legal Services",
       contactTitle: "Contact and Consultation Request",
       privacyTitle: "Privacy Policy",

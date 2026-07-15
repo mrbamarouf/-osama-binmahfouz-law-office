@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, title: pages.services[locale], path: "/services", image: "/images/atelier-documents.jpg" });
+  return buildMetadata({ locale, title: pages.services[locale], path: "/services", image: "/images/legal-books.jpg" });
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {

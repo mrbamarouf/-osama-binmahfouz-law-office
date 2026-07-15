@@ -36,15 +36,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="hero-copy">
           <div className="hero-copy-inner">
-            <Image
-              src="/brand/osama-symbol-official.svg"
-              alt=""
-              width={104}
-              height={84}
-              className="hero-brand-mark"
-              priority
-              unoptimized
-            />
             <p className="hero-intro">{dict.home.intro}</p>
             <p className="hero-name">{identity.name[locale]}</p>
             <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>
@@ -86,8 +77,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="quote-image">
           <Image
-            src="/images/atelier-documents.jpg"
-            alt={locale === "ar" ? "مستندات قانونية وقلم على مكتب مضاء" : "Legal documents and a pen on a lit desk"}
+            src="/images/office-meeting.jpg"
+            alt={locale === "ar" ? "غرفة اجتماع قانونية هادئة بلا أشخاص" : "Quiet legal meeting room without people"}
             fill
             sizes="(min-width: 1024px) 38vw, 100vw"
           />
@@ -97,15 +88,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="about-section section-block" id="about">
         <div className="about-image">
           <Image
-            src="/images/atelier-courtyard.jpg"
-            alt={locale === "ar" ? "فناء حجري هادئ مع نخيل وانعكاس ماء" : "Quiet stone courtyard with palms and water reflection"}
+            src="/images/atelier-corridor.jpg"
+            alt={locale === "ar" ? "ممر حجري مضاء بظلال هندسية" : "Stone corridor lit by geometric shadows"}
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>
         <div className="about-copy">
           <p className="section-kicker">{dict.sections.about}</p>
-          <h2>{identity.practice[locale]}</h2>
+          <h2>{locale === "en" ? dict.pages.aboutTitle : identity.practice[locale]}</h2>
           <p>{dict.home.aboutText}</p>
           <div className="identity-panel">
             <span>{identity.name[locale]}</span>
