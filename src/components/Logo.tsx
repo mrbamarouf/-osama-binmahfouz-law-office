@@ -27,6 +27,7 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
             width={220}
             height={220}
             className="logo-official-full"
+            style={{ height: "auto" }}
             priority
             unoptimized
           />
@@ -55,6 +56,7 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
           width={260}
           height={260}
           className="logo-official-full"
+          style={{ height: "auto" }}
           priority
           unoptimized
         />

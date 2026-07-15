@@ -32,6 +32,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             width={220}
             height={220}
             className="contact-brand-logo"
+            style={{ height: "auto" }}
             unoptimized
           />
           <h2>{dict.sections.contactData}</h2>
