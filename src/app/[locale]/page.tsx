@@ -142,7 +142,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {pages.about[locale]}
             <ArrowIcon aria-hidden="true" size={18} />
           </Link>
-          <p className="fine-note">{dict.home.aboutNote}</p>
         </div>
       </section>
 
@@ -187,7 +186,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <h3>{step.title[locale]}</h3>
               <p>{step.text[locale]}</p>
               {index === journey.length - 1 ? (
-                <Link className="text-link" href={localizedPath(locale, "/contact")}>
+                <Link className="text-link journey-cta" href={localizedPath(locale, "/contact")}>
                   {dict.actions.requestConsultation}
                   <ArrowIcon aria-hidden="true" size={18} />
                 </Link>

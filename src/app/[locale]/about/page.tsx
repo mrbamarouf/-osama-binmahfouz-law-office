@@ -33,7 +33,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div><a dir="ltr" href={contact.phoneHref}>{contact.phoneDisplay}</a></div>
             <div><a dir="ltr" href={contact.emailHref}>{contact.email}</a></div>
           </div>
-          <p className="fine-note">{dict.home.aboutNote}</p>
           <ContactActions locale={locale} />
         </div>
         <div className="about-detail-image">

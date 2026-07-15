@@ -35,7 +35,6 @@ export const dictionary = {
       intro: "مكتب أسامه بن محفوظ للمحاماة",
       aboutText:
         "مكتب قانوني في جدة يقدم خدمات المحاماة والاستشارات القانونية وفق معلومات واضحة وتواصل مباشر، مع التركيز على السرية والاحترافية وفهم تفاصيل كل طلب.",
-      aboutNote: "تظهر هنا المعلومات المؤكدة فقط: الاسم، الصفة، المدينة، رقم الترخيص، ووسائل التواصل المعتمدة.",
       servicesLead:
         "اختر مجالًا قانونيًا لعرض تفاصيله. على الجوال يمكنك فتح كل خدمة بوضوح دون الاعتماد على التحويم.",
       reasonsLead:
@@ -124,7 +123,6 @@ export const dictionary = {
       intro: "Osama Bin Mahfouz Law Office",
       aboutText:
         "A law office in Jeddah providing advocacy and legal consultation services through clear information and direct communication, with attention to confidentiality, professionalism, and understanding the details of each request.",
-      aboutNote: "Only confirmed information appears here: name, role, city, license number, and approved contact channels.",
       servicesLead:
         "Choose a legal area to view its details. On mobile, each service opens clearly without relying on hover.",
       reasonsLead:
