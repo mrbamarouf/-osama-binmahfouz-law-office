@@ -20,41 +20,47 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "ar";
   const dict = getDictionary(locale);
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
+  const [primaryReason, ...supportingReasons] = reasons;
 
   return (
     <>
       <section className="hero-section">
         <div className="hero-media">
           <Image
-            src="/images/hero-architecture-v2.webp"
-            alt={locale === "ar" ? "واجهة معمارية مضاءة بنخيل وظلال هادئة" : "Daylit architectural facade with palms and calm shadows"}
+            src="/images/atelier-palm-museum.jpg"
+            alt={locale === "ar" ? "واجهة معمارية بيضاء مع ظل نخيل وضوء نهاري" : "White architectural facade with palm shade and daylight"}
             fill
             sizes="(min-width: 1024px) 58vw, 100vw"
             priority
           />
         </div>
         <div className="hero-copy">
-          <p className="hero-intro">{dict.home.intro}</p>
-          <p className="hero-name">{identity.name[locale]}</p>
-          <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>
-          <h1>{coreCopy.headline[locale]}</h1>
-          <p className="hero-support">{coreCopy.support[locale]}</p>
-          <div className="hero-actions">
-            <Link className="button button-primary" href={localizedPath(locale, "/contact")}>
-              {dict.actions.requestConsultation}
-              <ArrowIcon aria-hidden="true" size={18} />
-            </Link>
-            <Link className="button button-secondary" href={localizedPath(locale, "/services")}>
-              {dict.actions.exploreServices}
-            </Link>
-          </div>
-          <div className="hero-contact" aria-label={dict.actions.directContact}>
-            <a href={contact.phoneHref}><Phone aria-hidden="true" size={17} /><span dir="ltr">{contact.phoneDisplay}</span></a>
-            <a href={contact.whatsappHref} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={17} /><span dir="ltr">{contact.whatsappDisplay}</span></a>
-            <a href={contact.emailHref}><Mail aria-hidden="true" size={17} /><span dir="ltr">{contact.email}</span></a>
+          <div className="hero-copy-inner">
+            <p className="hero-intro">{dict.home.intro}</p>
+            <p className="hero-name">{identity.name[locale]}</p>
+            <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>
+            <h1>{coreCopy.headline[locale]}</h1>
+            <p className="hero-support">{coreCopy.support[locale]}</p>
+            <div className="hero-actions">
+              <Link className="button button-primary" href={localizedPath(locale, "/contact")}>
+                {dict.actions.requestConsultation}
+                <ArrowIcon aria-hidden="true" size={18} />
+              </Link>
+              <Link className="button button-secondary" href={localizedPath(locale, "/services")}>
+                {dict.actions.exploreServices}
+              </Link>
+            </div>
+            <div className="hero-contact" aria-label={dict.actions.directContact}>
+              <a href={contact.phoneHref}><Phone aria-hidden="true" size={17} /><span dir="ltr">{contact.phoneDisplay}</span></a>
+              <a href={contact.whatsappHref} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={17} /><span dir="ltr">{contact.whatsappDisplay}</span></a>
+              <a href={contact.emailHref}><Mail aria-hidden="true" size={17} /><span dir="ltr">{contact.email}</span></a>
+            </div>
           </div>
         </div>
         <div className="hero-services" aria-label={dict.sections.selectedServices}>
+          <div className="hero-services-label">
+            <span>{dict.sections.selectedServices}</span>
+          </div>
           {services.slice(0, 4).map((service) => (
             <Link key={service.slug} href={localizedPath(locale, `/services/${service.slug}`)}>
               <span>{service.title[locale]}</span>
@@ -71,8 +77,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="quote-image">
           <Image
-            src="/images/documents-desk.webp"
-            alt={locale === "ar" ? "تفاصيل أوراق ومكتب قانوني هادئ" : "Quiet legal desk and paper details"}
+            src="/images/atelier-documents.jpg"
+            alt={locale === "ar" ? "مستندات قانونية وقلم على مكتب مضاء" : "Legal documents and a pen on a lit desk"}
             fill
             sizes="(min-width: 1024px) 38vw, 100vw"
           />
@@ -82,8 +88,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="about-section section-block" id="about">
         <div className="about-image">
           <Image
-            src="/images/about-architecture.webp"
-            alt={locale === "ar" ? "عمارة مضيئة في جدة بتكوين حجري فاتح" : "Bright Jeddah architecture with light stone composition"}
+            src="/images/atelier-courtyard.jpg"
+            alt={locale === "ar" ? "فناء حجري هادئ مع نخيل وانعكاس ماء" : "Quiet stone courtyard with palms and water reflection"}
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
@@ -118,13 +124,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <p>{dict.home.reasonsLead}</p>
         </div>
         <div className="reason-mosaic">
-          {reasons.map((reason, index) => (
-            <article key={reason.title.en} className={`reason-tile tile-${index + 1}`}>
-              <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{reason.title[locale]}</h3>
-              <p>{reason.text[locale]}</p>
-            </article>
-          ))}
+          <article className="reason-tile reason-main">
+            <span dir="ltr">01</span>
+            <h3>{primaryReason.title[locale]}</h3>
+            <p>{primaryReason.text[locale]}</p>
+          </article>
+          <div className="reason-support">
+            {supportingReasons.map((reason, index) => (
+              <article key={reason.title.en} className="reason-tile">
+                <span dir="ltr">{String(index + 2).padStart(2, "0")}</span>
+                <h3>{reason.title[locale]}</h3>
+                <p>{reason.text[locale]}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

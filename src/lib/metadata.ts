@@ -15,7 +15,7 @@ export function absoluteUrl(path = "") {
   return new URL(path, siteUrl).toString();
 }
 
-export function buildMetadata({ locale, title, description, path = "", image = "/images/hero-architecture-v2.webp" }: MetadataInput): Metadata {
+export function buildMetadata({ locale, title, description, path = "", image = "/images/atelier-palm-museum.jpg" }: MetadataInput): Metadata {
   const localizedTitle = title ? `${title} | ${identity.name[locale]}` : identity.name[locale];
   const localizedDescription = description || seo.description[locale];
   const cleanPath = path.startsWith("/") ? path : `/${path}`;

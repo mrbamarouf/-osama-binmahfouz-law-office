@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, title: pages.contact[locale], path: "/contact", image: "/images/notebook-desk.webp" });
+  return buildMetadata({ locale, title: pages.contact[locale], path: "/contact", image: "/images/atelier-signing.jpg" });
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {

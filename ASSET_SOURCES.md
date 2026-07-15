@@ -1,12 +1,12 @@
 # Asset Sources
 
-Local optimized images in `public/images` were downloaded and processed from Unsplash photo pages:
+Local optimized images in `public/images` were downloaded and processed from Unsplash photo pages. The visual-redesign-v2 assets replace the earlier off-direction images in the live UI:
 
-- `hero-architecture-v2.webp`: https://unsplash.com/photos/jQTV--UWOzY
-- `jeddah-skyline.webp`: https://unsplash.com/photos/qqkSNacI-3M
-- `about-architecture.webp`: https://unsplash.com/photos/fwRCftPs02M
-- `paper-pen-detail.webp`: https://unsplash.com/photos/6EnTPvPPL6I
-- `documents-desk.webp`: https://unsplash.com/photos/T8psV37DEgM
-- `notebook-desk.webp`: https://unsplash.com/photos/teyc6ty6OhM
+- `atelier-palm-museum.jpg`: https://unsplash.com/photos/a-building-with-a-palm-tree-in-front-of-it-cIZ3MPnZDC4
+- `atelier-courtyard.jpg`: https://unsplash.com/photos/a-serene-courtyard-with-a-pool-and-palm-tree-rf0X6UZWe6E
+- `atelier-arches.jpg`: https://unsplash.com/photos/courtyard-with-arches-and-palm-trees-SBcKyJETLxE
+- `atelier-corridor.jpg`: https://unsplash.com/photos/a-long-hallway-lined-with-columns-and-arches-BhwGcFAS6Zw
+- `atelier-documents.jpg`: https://unsplash.com/photos/two-people-are-signing-a-document-at-a-desk-EtiHiyDkld0
+- `atelier-signing.jpg`: https://unsplash.com/photos/man-signing-a-document-with-a-pen-QI6NLgN5XnM
 
 The office logo was extracted from the provided office identity card attachment and saved as `public/brand/osama-logo.png`.

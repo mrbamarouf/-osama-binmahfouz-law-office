@@ -12,51 +12,53 @@ export function Footer({ locale }: { locale: Locale }) {
 
   return (
     <footer className="site-footer">
-      <div className="footer-grid">
-        <div className="footer-brand">
-          <Logo locale={locale} />
-          <p>{identity.role[locale]}</p>
-          <p>{contact.licenseDisplay[locale]}</p>
-        </div>
-        <div>
-          <h2>{pages.services[locale]}</h2>
-          <ul className="footer-links">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link href={localizedPath(locale, `/services/${service.slug}`)}>{service.title[locale]}</Link>
+      <div className="footer-inner">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Logo locale={locale} />
+            <p>{identity.role[locale]}</p>
+            <p>{contact.licenseDisplay[locale]}</p>
+          </div>
+          <div>
+            <h2>{pages.services[locale]}</h2>
+            <ul className="footer-links">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link href={localizedPath(locale, `/services/${service.slug}`)}>{service.title[locale]}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2>{dict.sections.contactData}</h2>
+            <ul className="footer-contact">
+              <li>
+                <Phone aria-hidden="true" size={17} />
+                <a dir="ltr" href={contact.phoneHref}>{contact.phoneDisplay}</a>
               </li>
-            ))}
-          </ul>
+              <li>
+                <Mail aria-hidden="true" size={17} />
+                <a dir="ltr" href={contact.emailHref}>{contact.email}</a>
+              </li>
+              <li>
+                <MapPin aria-hidden="true" size={17} />
+                <span>{contact.city[locale]}</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>{dict.sections.legalPages}</h2>
+            <ul className="footer-links">
+              <li><Link href={localizedPath(locale, "/privacy")}>{pages.privacy[locale]}</Link></li>
+              <li><Link href={localizedPath(locale, "/legal-disclaimer")}>{pages.disclaimer[locale]}</Link></li>
+              <li><Link href={localizedPath(locale, "/contact")}>{pages.contact[locale]}</Link></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h2>{dict.sections.contactData}</h2>
-          <ul className="footer-contact">
-            <li>
-              <Phone aria-hidden="true" size={17} />
-              <a dir="ltr" href={contact.phoneHref}>{contact.phoneDisplay}</a>
-            </li>
-            <li>
-              <Mail aria-hidden="true" size={17} />
-              <a dir="ltr" href={contact.emailHref}>{contact.email}</a>
-            </li>
-            <li>
-              <MapPin aria-hidden="true" size={17} />
-              <span>{contact.city[locale]}</span>
-            </li>
-          </ul>
+        <div className="footer-bottom">
+          <span>{identity.name[locale]}</span>
+          <span>{dict.footer.rights} © {year}</span>
         </div>
-        <div>
-          <h2>{dict.sections.legalPages}</h2>
-          <ul className="footer-links">
-            <li><Link href={localizedPath(locale, "/privacy")}>{pages.privacy[locale]}</Link></li>
-            <li><Link href={localizedPath(locale, "/legal-disclaimer")}>{pages.disclaimer[locale]}</Link></li>
-            <li><Link href={localizedPath(locale, "/contact")}>{pages.contact[locale]}</Link></li>
-          </ul>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <span>{identity.name[locale]}</span>
-        <span>{dict.footer.rights} © {year}</span>
       </div>
     </footer>
   );

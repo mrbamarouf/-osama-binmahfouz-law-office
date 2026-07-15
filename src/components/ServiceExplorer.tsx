@@ -23,6 +23,7 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
             key={service.slug}
             className={`service-row ${active.slug === service.slug ? "is-active" : ""}`}
             type="button"
+            aria-pressed={active.slug === service.slug}
             onMouseEnter={() => setActiveIndex(index)}
             onFocus={() => setActiveIndex(index)}
             onClick={() => setActiveIndex(index)}

@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, title: pages.about[locale], path: "/about", image: "/images/about-architecture.webp" });
+  return buildMetadata({ locale, title: pages.about[locale], path: "/about", image: "/images/atelier-courtyard.jpg" });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -38,8 +38,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
         <div className="about-detail-image">
           <Image
-            src="/images/jeddah-skyline.webp"
-            alt={locale === "ar" ? "مشهد معماري مضيء في جدة" : "Bright architectural scene in Jeddah"}
+            src="/images/atelier-corridor.jpg"
+            alt={locale === "ar" ? "ممر حجري مضاء بظلال هندسية" : "Stone corridor lit by geometric shadows"}
             fill
             sizes="(min-width: 1024px) 46vw, 100vw"
           />
