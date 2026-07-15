@@ -17,27 +17,26 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
 
   return (
     <div className="service-explorer">
-      <div className="service-index" role="list" aria-label={dict.sections.services}>
+      <nav className="service-index" aria-label={dict.sections.services}>
         {services.map((service, index) => (
-          <button
+          <Link
             key={service.slug}
+            href={localizedPath(locale, `/services/${service.slug}`)}
             className={`service-index-row ${active.slug === service.slug ? "is-active" : ""}`}
-            type="button"
-            aria-pressed={active.slug === service.slug}
+            aria-current={active.slug === service.slug ? "true" : undefined}
             onMouseEnter={() => setActiveIndex(index)}
             onFocus={() => setActiveIndex(index)}
-            onClick={() => setActiveIndex(index)}
           >
             <span className="service-number" dir="ltr">{String(index + 1).padStart(2, "0")}</span>
             <span className="service-index-title">
               <strong>{service.title[locale]}</strong>
             </span>
             <ArrowIcon aria-hidden="true" size={18} />
-          </button>
+          </Link>
         ))}
-      </div>
+      </nav>
 
-      <article className="service-stage" aria-live="polite">
+      <article key={active.slug} className="service-stage" aria-live="polite">
         <div className="service-stage-image">
           <Image
             src={active.image}

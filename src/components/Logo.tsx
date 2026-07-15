@@ -24,8 +24,8 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
           <Image
             src="/brand/osama-logo-header.svg"
             alt=""
-            width={220}
-            height={220}
+            width={489}
+            height={488}
             className="logo-official-full"
             style={{ height: "auto" }}
             priority
@@ -53,10 +53,10 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
         <Image
           src="/brand/osama-logo-official.svg"
           alt=""
-          width={260}
-          height={260}
+          width={489}
+          height={488}
           className="logo-official-full"
-          style={{ height: "auto" }}
+          style={{ width: "clamp(142px, 11vw, 196px)", height: "auto" }}
           priority
           unoptimized
         />

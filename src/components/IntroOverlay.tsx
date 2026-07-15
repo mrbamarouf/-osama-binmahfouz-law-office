@@ -60,10 +60,10 @@ export function IntroOverlay() {
         <Image
           src="/brand/osama-logo-official.svg"
           alt="شعار أسامه بن محفوظ للمحاماة والاستشارات القانونية"
-          width={520}
-          height={520}
+          width={489}
+          height={488}
           className="intro-logo"
-          style={{ height: "auto" }}
+          style={{ width: "min(520px, 74vw)", height: "auto" }}
           priority
           unoptimized
         />

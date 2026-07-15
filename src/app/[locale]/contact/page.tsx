@@ -29,10 +29,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <Image
             src="/brand/osama-logo-official.svg"
             alt=""
-            width={220}
-            height={220}
+            width={489}
+            height={488}
             className="contact-brand-logo"
-            style={{ height: "auto" }}
+            style={{ width: "clamp(140px, 16vw, 220px)", height: "auto" }}
             unoptimized
           />
           <h2>{dict.sections.contactData}</h2>

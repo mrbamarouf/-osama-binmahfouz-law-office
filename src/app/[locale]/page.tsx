@@ -84,9 +84,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             sizes="(min-width: 1024px) 58vw, 100vw"
             priority
           />
-          <div className="hero-legal-seal" aria-hidden="true">
-            <span dir="ltr">441316</span>
-          </div>
         </div>
         <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Office summary"}>
           <span><strong dir="ltr">07</strong>{dict.sections.selectedServices}</span>
@@ -167,11 +164,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
           <div className="reason-list">
             {reasons.map((reason, index) => (
-              <article key={reason.title.en} className={`reason-line ${index === 2 ? "is-emphasized" : ""}`}>
+              <article key={reason.title.en} className={`reason-line ${index === 2 ? "is-emphasized" : ""}`} tabIndex={0}>
                 <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{reason.title[locale]}</h3>
                 <p>{reason.text[locale]}</p>
-                <ArrowIcon aria-hidden="true" size={18} />
               </article>
             ))}
           </div>
