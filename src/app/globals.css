@@ -203,14 +203,15 @@ p {
 }
 
 .button-ghost {
-  color: var(--soft-white);
-  background: transparent;
-  border-color: rgba(255, 252, 247, 0.34);
+  color: var(--deep-olive);
+  background: rgba(255, 252, 247, 0.78);
+  border-color: rgba(57, 68, 49, 0.24);
 }
 
 .button-ghost:hover {
+  color: var(--deep-olive);
   border-color: var(--brass);
-  background: rgba(255, 252, 247, 0.08);
+  background: var(--soft-white);
 }
 
 .text-link {
@@ -830,16 +831,21 @@ p {
 }
 
 .trust-strip a {
-  flex: 0 0 auto;
+  flex: 1 1 0;
+  min-width: 0;
   min-height: 64px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   padding-inline: 18px;
   color: var(--deep-olive);
   border-inline-end: 1px solid rgba(57, 68, 49, 0.12);
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   font-weight: 700;
-  white-space: nowrap;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
   transition: color 200ms ease, background 200ms ease;
 }
 
@@ -1076,11 +1082,16 @@ p {
 }
 
 .service-number,
-.service-stage-index,
 .reason-line > span,
 .journey-track > article > span,
 .directory-copy > span {
   color: var(--brass);
+  font-family: var(--font-latin), sans-serif;
+  font-weight: 900;
+}
+
+.service-stage-index {
+  color: var(--limestone);
   font-family: var(--font-latin), sans-serif;
   font-weight: 900;
 }
@@ -1325,6 +1336,41 @@ p {
 
 .final-cta .contact-actions {
   justify-content: flex-end;
+}
+
+.final-cta .button-primary {
+  color: var(--deep-olive);
+  background: var(--soft-white);
+  border-color: rgba(255, 252, 247, 0.72);
+  box-shadow: none;
+}
+
+.final-cta .button-primary:hover {
+  background: #f2eadc;
+  border-color: var(--brass);
+}
+
+.final-cta .button-secondary {
+  color: var(--soft-white);
+  background: rgba(255, 252, 247, 0.08);
+  border-color: rgba(255, 252, 247, 0.42);
+}
+
+.final-cta .button-secondary:hover {
+  border-color: var(--brass);
+  background: rgba(255, 252, 247, 0.14);
+}
+
+.final-cta .button-ghost {
+  color: var(--soft-white);
+  background: rgba(255, 252, 247, 0.08);
+  border-color: rgba(255, 252, 247, 0.42);
+}
+
+.final-cta .button-ghost:hover {
+  color: var(--soft-white);
+  border-color: var(--brass);
+  background: rgba(255, 252, 247, 0.12);
 }
 
 .page-hero {

@@ -358,6 +358,7 @@
   }
 
   .trust-strip a {
+    flex: 0 0 auto;
     min-height: 40px;
     max-width: 210px;
     padding-inline: 13px;
@@ -366,6 +367,7 @@
     background: rgba(255, 252, 247, 0.62);
     font-size: 14px;
     line-height: 1.35;
+    white-space: nowrap;
     scroll-snap-align: start;
   }
 
