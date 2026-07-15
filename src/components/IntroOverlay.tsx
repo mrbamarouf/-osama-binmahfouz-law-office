@@ -63,6 +63,7 @@ export function IntroOverlay() {
           width={520}
           height={520}
           className="intro-logo"
+          style={{ height: "auto" }}
           priority
           unoptimized
         />
