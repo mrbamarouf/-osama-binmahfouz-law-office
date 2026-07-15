@@ -93,7 +93,7 @@ export function Header({ locale }: HeaderProps) {
       <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!open}>
         <div className="mobile-menu-panel">
           <div className="mobile-menu-top">
-            <Logo locale={locale} compact />
+            <Logo locale={locale} variant="full" />
             <button className="icon-button" type="button" onClick={() => setOpen(false)}>
               <X aria-hidden="true" size={24} />
               <span className="sr-only">{dict.nav.close}</span>

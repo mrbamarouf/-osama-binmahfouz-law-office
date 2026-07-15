@@ -36,6 +36,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="hero-copy">
           <div className="hero-copy-inner">
+            <Image
+              src="/brand/osama-symbol-official.svg"
+              alt=""
+              width={104}
+              height={84}
+              className="hero-brand-mark"
+              priority
+              unoptimized
+            />
             <p className="hero-intro">{dict.home.intro}</p>
             <p className="hero-name">{identity.name[locale]}</p>
             <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>

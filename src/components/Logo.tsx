@@ -6,22 +6,72 @@ import { identity } from "@/data/site";
 type LogoProps = {
   locale: Locale;
   compact?: boolean;
+  variant?: "responsive" | "full" | "symbol";
 };
 
-export function Logo({ locale, compact = false }: LogoProps) {
+const shortName: Record<Locale, string> = {
+  ar: "أسامه بن محفوظ",
+  en: "Osama Bin Mahfouz"
+};
+
+export function Logo({ locale, compact = false, variant }: LogoProps) {
+  const resolvedVariant = variant ?? (compact ? "symbol" : "responsive");
+
   return (
-    <Link className="logo-lockup" href={`/${locale}`} aria-label={identity.name[locale]}>
-      <Image
-        src="/brand/osama-logo.png"
-        alt=""
-        width={78}
-        height={110}
-        className="logo-mark"
-        priority
-      />
-      {!compact ? (
+    <Link className={`logo-lockup logo-lockup-${resolvedVariant}`} href={`/${locale}`} aria-label={identity.name[locale]}>
+      {resolvedVariant === "responsive" ? (
+        <>
+          <Image
+            src="/brand/osama-logo-header.svg"
+            alt=""
+            width={220}
+            height={220}
+            className="logo-official-full"
+            priority
+            unoptimized
+          />
+          <span className="logo-compact-set">
+            <Image
+              src="/brand/osama-symbol-official.svg"
+              alt=""
+              width={96}
+              height={78}
+              className="logo-mark"
+              priority
+              unoptimized
+            />
+            <span className="logo-text">
+              <strong>{shortName[locale]}</strong>
+              <small>{identity.practice[locale]}</small>
+            </span>
+          </span>
+        </>
+      ) : null}
+
+      {resolvedVariant === "full" ? (
+        <Image
+          src="/brand/osama-logo-official.svg"
+          alt=""
+          width={260}
+          height={260}
+          className="logo-official-full"
+          priority
+          unoptimized
+        />
+      ) : null}
+
+      {resolvedVariant === "symbol" ? (
         <span className="logo-text">
-          <strong>{identity.name[locale]}</strong>
+          <Image
+            src="/brand/osama-symbol-official.svg"
+            alt=""
+            width={96}
+            height={78}
+            className="logo-mark"
+            priority
+            unoptimized
+          />
+          <strong>{shortName[locale]}</strong>
           <small>{identity.practice[locale]}</small>
         </span>
       ) : null}

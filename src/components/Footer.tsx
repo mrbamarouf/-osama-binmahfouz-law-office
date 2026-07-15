@@ -15,7 +15,7 @@ export function Footer({ locale }: { locale: Locale }) {
       <div className="footer-inner">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Logo locale={locale} />
+            <Logo locale={locale} variant="full" />
             <p>{identity.role[locale]}</p>
             <p>{contact.licenseDisplay[locale]}</p>
           </div>

@@ -15,11 +15,12 @@ export function absoluteUrl(path = "") {
   return new URL(path, siteUrl).toString();
 }
 
-export function buildMetadata({ locale, title, description, path = "", image = "/images/atelier-palm-museum.jpg" }: MetadataInput): Metadata {
+export function buildMetadata({ locale, title, description, path = "", image = "/brand/osama-logo-og.png" }: MetadataInput): Metadata {
   const localizedTitle = title ? `${title} | ${identity.name[locale]}` : identity.name[locale];
   const localizedDescription = description || seo.description[locale];
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   const canonical = absoluteUrl(`/${locale}${cleanPath === "/" ? "" : cleanPath}`);
+  const isLogoOg = image.includes("osama-logo-og");
 
   return {
     title: localizedTitle,
@@ -40,7 +41,7 @@ export function buildMetadata({ locale, title, description, path = "", image = "
         {
           url: absoluteUrl(image),
           width: 1200,
-          height: 800,
+          height: isLogoOg ? 630 : 800,
           alt: identity.name[locale]
         }
       ]
@@ -51,6 +52,10 @@ export function buildMetadata({ locale, title, description, path = "", image = "
       description: localizedDescription,
       images: [absoluteUrl(image)]
     },
-    keywords: seo.keywords[locale]
+    keywords: seo.keywords[locale],
+    icons: {
+      icon: [{ url: "/brand/favicon.png", type: "image/png", sizes: "512x512" }],
+      apple: [{ url: "/brand/apple-touch-icon.png", type: "image/png", sizes: "180x180" }]
+    }
   };
 }

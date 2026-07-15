@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { IntroOverlay } from "@/components/IntroOverlay";
 import { MobileContactBar } from "@/components/MobileContactBar";
 import { identity, seo } from "@/data/site";
 import { getDirection, isLocale, locales, type Locale } from "@/i18n/routing";
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
       className={`${kufi.variable} ${plexArabic.variable} ${manrope.variable}`}
     >
       <body>
+        <IntroOverlay />
         <script
           type="application/ld+json"
           suppressHydrationWarning

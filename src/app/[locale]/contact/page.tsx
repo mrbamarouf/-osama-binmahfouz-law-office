@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactActions } from "@/components/ContactActions";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { PageHero } from "@/components/PageHero";
@@ -25,6 +26,14 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       </PageHero>
       <section className="contact-page section-block">
         <div className="contact-panel">
+          <Image
+            src="/brand/osama-logo-official.svg"
+            alt=""
+            width={220}
+            height={220}
+            className="contact-brand-logo"
+            unoptimized
+          />
           <h2>{dict.sections.contactData}</h2>
           <ul className="contact-lines">
             <li><span>{dict.actions.callNow}</span><a dir="ltr" href={contact.phoneHref}>{contact.phoneDisplay}</a></li>

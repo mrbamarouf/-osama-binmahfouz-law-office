@@ -44,6 +44,14 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     <>
       <section className="service-detail-hero">
         <div className="service-detail-copy">
+          <Image
+            src="/brand/osama-symbol-official.svg"
+            alt=""
+            width={108}
+            height={88}
+            className="service-detail-logo"
+            unoptimized
+          />
           <Link className="text-link" href={localizedPath(locale, "/services")}>
             <ArrowIcon aria-hidden="true" size={18} />
             {dict.actions.backServices}
