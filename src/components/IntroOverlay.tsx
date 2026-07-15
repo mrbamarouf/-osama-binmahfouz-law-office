@@ -21,7 +21,7 @@ export function IntroOverlay() {
     exitStarted.current = true;
     setExiting(true);
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.setTimeout(finishIntro, reducedMotion ? 260 : 680);
+    window.setTimeout(finishIntro, reducedMotion ? 240 : 520);
   }, [finishIntro]);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ export function IntroOverlay() {
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const skipDelay = window.setTimeout(() => setCanSkip(true), reducedMotion ? 220 : 820);
-    const exitDelay = window.setTimeout(startExit, reducedMotion ? 820 : 2920);
-    const fallbackDelay = window.setTimeout(finishIntro, reducedMotion ? 1700 : 4300);
+    const exitDelay = window.setTimeout(startExit, reducedMotion ? 720 : 2600);
+    const fallbackDelay = window.setTimeout(finishIntro, reducedMotion ? 1500 : 3600);
 
     return () => {
       window.clearTimeout(skipDelay);

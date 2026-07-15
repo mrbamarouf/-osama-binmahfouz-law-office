@@ -15,6 +15,7 @@ export function Footer({ locale }: { locale: Locale }) {
       <div className="footer-inner">
         <div className="footer-statement">
           <Logo locale={locale} variant="full" />
+          <strong className="footer-office-name">{identity.name[locale]}</strong>
           <p>{identity.role[locale]}</p>
           <p>{contact.licenseDisplay[locale]} · {contact.city[locale]}</p>
         </div>

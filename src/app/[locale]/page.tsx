@@ -31,7 +31,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <>
         With you at every step,
         <br />
-        until your rights are protected.
+        until your rights
+        <br className="mobile-title-break" />
+        are protected.
       </>
     );
   const closingTitle =
@@ -84,6 +86,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             sizes="(min-width: 1024px) 58vw, 100vw"
             priority
           />
+        </div>
+        <div className="hero-mobile-contact" aria-label={dict.actions.directContact}>
+          <a href={contact.whatsappHref} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" size={17} />
+            <span dir="ltr">{contact.whatsappDisplay}</span>
+          </a>
+          <a href={contact.phoneHref}>
+            <Phone aria-hidden="true" size={17} />
+            <span dir="ltr">{contact.phoneDisplay}</span>
+          </a>
+          <a href={contact.emailHref}>
+            <Mail aria-hidden="true" size={17} />
+            <span dir="ltr">{contact.email}</span>
+          </a>
         </div>
         <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Office summary"}>
           <span><strong dir="ltr">07</strong>{dict.sections.selectedServices}</span>

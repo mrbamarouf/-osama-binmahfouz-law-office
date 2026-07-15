@@ -54,6 +54,15 @@ export function Header({ locale }: HeaderProps) {
     return () => document.body.classList.remove("menu-open");
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   const persistLanguage = (value: Locale) => {
     document.cookie = `NEXT_LOCALE=${value}; path=/; max-age=31536000; samesite=lax`;
     window.localStorage.setItem("preferred-locale", value);
@@ -93,7 +102,7 @@ export function Header({ locale }: HeaderProps) {
       </div>
 
       <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!open}>
-        <div className="mobile-menu-panel">
+        <div className="mobile-menu-panel" role="dialog" aria-modal="true" aria-label={dict.nav.menu}>
           <div className="mobile-menu-top">
             <Logo locale={locale} variant="full" />
             <button className="icon-button" type="button" onClick={() => setOpen(false)}>
