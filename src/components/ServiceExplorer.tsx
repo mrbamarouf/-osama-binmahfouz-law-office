@@ -74,6 +74,14 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
               </button>
               {isActive ? (
                 <div className="service-mobile-panel" id={`service-mobile-${service.slug}`}>
+                  <div className="service-mobile-image">
+                    <Image
+                      src={service.image}
+                      alt={service.title[locale]}
+                      fill
+                      sizes="(max-width: 767px) 100vw, 0vw"
+                    />
+                  </div>
                   <p>{service.summary[locale]}</p>
                   <Link className="text-link" href={localizedPath(locale, `/services/${service.slug}`)}>
                     {dict.actions.viewService}

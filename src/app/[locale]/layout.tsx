@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans_Arabic, Manrope, Noto_Kufi_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
+import "../mobile.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { IntroOverlay } from "@/components/IntroOverlay";

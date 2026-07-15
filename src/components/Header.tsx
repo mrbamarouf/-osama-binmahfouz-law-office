@@ -40,8 +40,11 @@ export function Header({ locale }: HeaderProps) {
     let lastY = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;
+      const delta = Math.abs(y - lastY);
       setScrolled(y > 24);
-      setHidden(y > 150 && y > lastY && !open);
+      if (delta > 6) {
+        setHidden(y > 96 && y > lastY && !open);
+      }
       lastY = y;
     };
     onScroll();
