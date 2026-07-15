@@ -66,7 +66,11 @@ export function Header({ locale }: HeaderProps) {
     <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${hidden ? "is-hidden" : ""}`}>
       <div className="header-inner">
         <Logo locale={locale} />
-        <nav className="desktop-nav" aria-label={locale === "ar" ? "التنقل الرئيسي" : "Primary navigation"}>
+        <nav
+          className="desktop-nav"
+          dir={locale === "ar" ? "rtl" : "ltr"}
+          aria-label={locale === "ar" ? "التنقل الرئيسي" : "Primary navigation"}
+        >
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
@@ -104,7 +108,11 @@ export function Header({ locale }: HeaderProps) {
               <span className="sr-only">{dict.nav.close}</span>
             </button>
           </div>
-          <nav className="mobile-nav" aria-label={locale === "ar" ? "قائمة الجوال" : "Mobile navigation"}>
+          <nav
+            className="mobile-nav"
+            dir={locale === "ar" ? "rtl" : "ltr"}
+            aria-label={locale === "ar" ? "قائمة الجوال" : "Mobile navigation"}
+          >
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 {item.label}
