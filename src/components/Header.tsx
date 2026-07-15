@@ -111,7 +111,7 @@ export function Header({ locale }: HeaderProps) {
           <nav
             className="mobile-nav"
             dir={locale === "ar" ? "rtl" : "ltr"}
-            aria-label={locale === "ar" ? "قائمة الجوال" : "Mobile navigation"}
+            aria-label={dict.nav.menu}
           >
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>

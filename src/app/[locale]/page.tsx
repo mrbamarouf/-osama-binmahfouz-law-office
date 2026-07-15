@@ -149,7 +149,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="section-heading">
           <p className="section-kicker">{dict.sections.services}</p>
           <h2>{pages.services[locale]}</h2>
-          <p>{dict.home.servicesLead}</p>
         </div>
         <ServiceExplorer locale={locale} />
       </section>

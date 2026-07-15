@@ -10,7 +10,7 @@ export type Service = {
   image: string;
 };
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://osama-binmahfouz-law-office.example";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://osama-binmahfouz-law-office.vercel.app";
 
 export const contact = {
   phoneDisplay: "0537515551",

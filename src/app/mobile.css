@@ -1058,7 +1058,6 @@
     pointer-events: none;
   }
 
-  /* Final mobile v5 corrections: keep the phone layout compact and readable. */
   body {
     padding-bottom: 0;
   }

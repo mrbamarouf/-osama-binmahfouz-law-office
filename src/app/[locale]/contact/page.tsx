@@ -21,9 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <PageHero title={dict.pages.contactTitle} eyebrow={dict.sections.finalContact}>
-        <p>{dict.form.note}</p>
-      </PageHero>
+      <PageHero title={dict.pages.contactTitle} eyebrow={dict.sections.finalContact} />
       <section className="contact-page section-block">
         <div className="contact-panel">
           <Image

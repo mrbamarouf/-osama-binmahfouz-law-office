@@ -22,9 +22,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <PageHero title={dict.pages.servicesTitle} eyebrow={dict.sections.services}>
-        <p>{dict.home.servicesLead}</p>
-      </PageHero>
+      <PageHero title={dict.pages.servicesTitle} eyebrow={dict.sections.services} />
       <section className="service-directory section-block">
         {services.map((service, index) => (
           <article className="directory-item" key={service.slug}>

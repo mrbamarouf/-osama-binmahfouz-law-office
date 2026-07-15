@@ -19,7 +19,6 @@ export function ConsultationForm({ locale }: { locale: Locale }) {
     <div className="consultation-card">
       <div className="consultation-card-heading">
         <h2>{dict.form.title}</h2>
-        <p>{dict.form.note}</p>
         <a className="button button-secondary" href={contact.whatsappHref} target="_blank" rel="noreferrer">
           <MessageCircle aria-hidden="true" size={18} />
           {dict.actions.whatsapp}
