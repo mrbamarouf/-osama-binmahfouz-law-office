@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildMetadata({ locale, title: pages.about[locale], path: "/about", image: "/images/office-meeting.jpg" });
+  return buildMetadata({ locale, title: pages.about[locale], path: "/about", image: "/images/legal-majlis-v3.webp" });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -38,7 +38,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
         <div className="about-detail-image">
           <Image
-            src="/images/office-meeting.jpg"
+            src="/images/legal-majlis-v3.webp"
             alt={locale === "ar" ? "غرفة اجتماع قانونية هادئة بلا أشخاص" : "Quiet legal meeting room without people"}
             fill
             sizes="(min-width: 1024px) 46vw, 100vw"

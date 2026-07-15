@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -34,6 +34,7 @@ export function Header({ locale }: HeaderProps) {
 
   const nextLocale: Locale = locale === "ar" ? "en" : "ar";
   const switchHref = swapLocale(pathname, nextLocale);
+  const switchLabel = nextLocale === "ar" ? "AR" : "EN";
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -71,7 +72,8 @@ export function Header({ locale }: HeaderProps) {
         </nav>
         <div className="header-actions">
           <Link className="language-link" href={switchHref} hrefLang={nextLocale} onClick={() => persistLanguage(nextLocale)}>
-            {dict.nav.switchTo}
+            <span className="language-short" aria-hidden="true">{switchLabel}</span>
+            <span className="language-full">{dict.nav.switchTo}</span>
           </Link>
           <Link className="button button-primary header-cta" href={localizedPath(locale, "/contact")}>
             {dict.nav.request}
@@ -105,17 +107,28 @@ export function Header({ locale }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
-            <Link href={switchHref} hrefLang={nextLocale} onClick={() => persistLanguage(nextLocale)}>
+            <Link href={switchHref} hrefLang={nextLocale} onClick={() => {
+              persistLanguage(nextLocale);
+              setOpen(false);
+            }}>
               {dict.nav.switchTo}
             </Link>
           </nav>
           <div className="mobile-menu-contact">
-            <a className="button button-primary" href={contact.phoneHref}>
+            <Link className="button button-primary mobile-menu-request" href={localizedPath(locale, "/contact")} onClick={() => setOpen(false)}>
+              {dict.nav.request}
+            </Link>
+            <a className="button button-primary" href={contact.whatsappHref} target="_blank" rel="noreferrer">
+              <MessageCircle aria-hidden="true" size={18} />
+              {dict.actions.whatsapp}
+            </a>
+            <a className="button button-secondary" href={contact.phoneHref}>
               <Phone aria-hidden="true" size={18} />
               {dict.actions.callNow}
             </a>
-            <a className="button button-secondary" href={contact.whatsappHref} target="_blank" rel="noreferrer">
-              {dict.actions.whatsapp}
+            <a className="button button-ghost" href={contact.emailHref}>
+              <Mail aria-hidden="true" size={18} />
+              {dict.actions.email}
             </a>
           </div>
         </div>

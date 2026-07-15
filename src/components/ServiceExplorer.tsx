@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import type { Locale } from "@/i18n/routing";
 import { localizedPath } from "@/i18n/routing";
@@ -11,17 +11,17 @@ import { getDictionary } from "@/i18n/dictionary";
 
 export function ServiceExplorer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const active = services[activeIndex];
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
 
   return (
     <div className="service-explorer">
-      <div className="service-list" role="list" aria-label={dict.sections.services}>
+      <div className="service-index" role="list" aria-label={dict.sections.services}>
         {services.map((service, index) => (
           <button
             key={service.slug}
-            className={`service-row ${active.slug === service.slug ? "is-active" : ""}`}
+            className={`service-index-row ${active.slug === service.slug ? "is-active" : ""}`}
             type="button"
             aria-pressed={active.slug === service.slug}
             onMouseEnter={() => setActiveIndex(index)}
@@ -29,24 +29,25 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
             onClick={() => setActiveIndex(index)}
           >
             <span className="service-number" dir="ltr">{String(index + 1).padStart(2, "0")}</span>
-            <span>
+            <span className="service-index-title">
               <strong>{service.title[locale]}</strong>
-              <small>{service.summary[locale]}</small>
             </span>
+            <ArrowIcon aria-hidden="true" size={18} />
           </button>
         ))}
       </div>
-      <article className="service-feature">
-        <div className="service-feature-image">
+
+      <article className="service-stage" aria-live="polite">
+        <div className="service-stage-image">
           <Image
             src={active.image}
             alt={active.title[locale]}
             fill
-            sizes="(min-width: 1024px) 46vw, 100vw"
+            sizes="(min-width: 1024px) 44vw, 100vw"
           />
         </div>
-        <div className="service-feature-copy">
-          <span className="service-feature-index" dir="ltr">{String(activeIndex + 1).padStart(2, "0")}</span>
+        <div className="service-stage-copy">
+          <span className="service-stage-index" dir="ltr">{String(activeIndex + 1).padStart(2, "0")}</span>
           <h3>{active.title[locale]}</h3>
           <p>{active.detail[locale]}</p>
           <Link className="text-link" href={localizedPath(locale, `/services/${active.slug}`)}>
@@ -55,6 +56,36 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
           </Link>
         </div>
       </article>
+
+      <div className="service-mobile-list" role="list" aria-label={dict.sections.services}>
+        {services.map((service, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <article className={`service-mobile-item ${isActive ? "is-active" : ""}`} key={service.slug}>
+              <button
+                className="service-mobile-trigger"
+                type="button"
+                aria-expanded={isActive}
+                aria-controls={`service-mobile-${service.slug}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                <span className="service-number" dir="ltr">{String(index + 1).padStart(2, "0")}</span>
+                <strong>{service.title[locale]}</strong>
+                <ChevronDown aria-hidden="true" size={18} />
+              </button>
+              {isActive ? (
+                <div className="service-mobile-panel" id={`service-mobile-${service.slug}`}>
+                  <p>{service.summary[locale]}</p>
+                  <Link className="text-link" href={localizedPath(locale, `/services/${service.slug}`)}>
+                    {dict.actions.viewService}
+                    <ArrowIcon aria-hidden="true" size={18} />
+                  </Link>
+                </div>
+              ) : null}
+            </article>
+          );
+        })}
+      </div>
     </div>
   );
 }

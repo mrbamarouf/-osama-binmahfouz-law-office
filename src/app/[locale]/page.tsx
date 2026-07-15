@@ -20,34 +20,53 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "ar";
   const dict = getDictionary(locale);
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
-  const [primaryReason, ...supportingReasons] = reasons;
+  const heroTitle =
+    locale === "ar" ? (
+      <>
+        معك في كل خطوة..
+        <br />
+        حتى يصل حقك
+      </>
+    ) : (
+      <>
+        With you at every step,
+        <br />
+        until your rights are protected.
+      </>
+    );
+  const closingTitle =
+    locale === "ar" ? (
+      <>
+        ثقتك أمانة..
+        <br />
+        ورضاك هدفنا
+      </>
+    ) : (
+      <>
+        Your trust is our responsibility.
+        <br />
+        Your satisfaction is our goal.
+      </>
+    );
 
   return (
     <>
       <section className="hero-section">
-        <div className="hero-media">
-          <Image
-            src="/images/atelier-palm-museum.jpg"
-            alt={locale === "ar" ? "واجهة معمارية بيضاء مع ظل نخيل وضوء نهاري" : "White architectural facade with palm shade and daylight"}
-            fill
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            priority
-          />
-        </div>
         <div className="hero-copy">
           <div className="hero-copy-inner">
             <p className="hero-intro">{dict.home.intro}</p>
             <p className="hero-name">{identity.name[locale]}</p>
             <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>
-            <h1>{coreCopy.headline[locale]}</h1>
+            <h1>{heroTitle}</h1>
             <p className="hero-support">{coreCopy.support[locale]}</p>
             <div className="hero-actions">
               <Link className="button button-primary" href={localizedPath(locale, "/contact")}>
                 {dict.actions.requestConsultation}
                 <ArrowIcon aria-hidden="true" size={18} />
               </Link>
-              <Link className="button button-secondary" href={localizedPath(locale, "/services")}>
+              <Link className="text-link hero-service-link" href={localizedPath(locale, "/services")}>
                 {dict.actions.exploreServices}
+                <ArrowIcon aria-hidden="true" size={18} />
               </Link>
             </div>
             <div className="hero-contact" aria-label={dict.actions.directContact}>
@@ -57,39 +76,57 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
         </div>
-        <div className="hero-services" aria-label={dict.sections.selectedServices}>
-          <div className="hero-services-label">
-            <span>{dict.sections.selectedServices}</span>
+        <div className="hero-media">
+          <Image
+            src="/images/jeddah-courtyard-v3.webp"
+            alt={locale === "ar" ? "فناء حجري معاصر في جدة بضوء نهاري وظلال نخيل" : "Contemporary limestone courtyard in Jeddah daylight with palm shadows"}
+            fill
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            priority
+          />
+          <div className="hero-legal-seal" aria-hidden="true">
+            <span dir="ltr">441316</span>
           </div>
-          {services.slice(0, 4).map((service) => (
+        </div>
+        <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Office summary"}>
+          <span><strong dir="ltr">07</strong>{dict.sections.selectedServices}</span>
+          <span>{contact.city[locale]}</span>
+          <span>{contact.licenseDisplay[locale]}</span>
+        </div>
+      </section>
+
+      <section className="trust-strip" aria-label={dict.sections.selectedServices}>
+        <div className="trust-strip-inner">
+          {services.map((service, index) => (
             <Link key={service.slug} href={localizedPath(locale, `/services/${service.slug}`)}>
-              <span>{service.title[locale]}</span>
-              <small>{service.summary[locale]}</small>
+              <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
+              {service.title[locale]}
+              <ArrowIcon aria-hidden="true" size={16} />
             </Link>
           ))}
         </div>
       </section>
 
       <section className="quote-section section-block">
+        <div className="quote-visual" aria-hidden="true">
+          <Image
+            src="/images/mashrabiya-shadow-v3.webp"
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 28vw, 100vw"
+          />
+        </div>
         <div className="quote-text">
           <p className="section-kicker">{dict.sections.quote}</p>
           <blockquote>{coreCopy.quote[locale]}</blockquote>
-        </div>
-        <div className="quote-image">
-          <Image
-            src="/images/office-meeting.jpg"
-            alt={locale === "ar" ? "غرفة اجتماع قانونية هادئة بلا أشخاص" : "Quiet legal meeting room without people"}
-            fill
-            sizes="(min-width: 1024px) 38vw, 100vw"
-          />
         </div>
       </section>
 
       <section className="about-section section-block" id="about">
         <div className="about-image">
           <Image
-            src="/images/atelier-corridor.jpg"
-            alt={locale === "ar" ? "ممر حجري مضاء بظلال هندسية" : "Stone corridor lit by geometric shadows"}
+            src="/images/legal-majlis-v3.webp"
+            alt={locale === "ar" ? "غرفة اجتماع قانونية معاصرة بلا أشخاص" : "Contemporary legal meeting room without people"}
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
@@ -98,12 +135,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <p className="section-kicker">{dict.sections.about}</p>
           <h2>{locale === "en" ? dict.pages.aboutTitle : identity.practice[locale]}</h2>
           <p>{dict.home.aboutText}</p>
-          <div className="identity-panel">
+          <div className="office-lines">
             <span>{identity.name[locale]}</span>
             <strong>{identity.role[locale]}</strong>
             <small>{contact.licenseDisplay[locale]}</small>
             <small>{contact.city[locale]}</small>
           </div>
+          <Link className="text-link" href={localizedPath(locale, "/about")}>
+            {pages.about[locale]}
+            <ArrowIcon aria-hidden="true" size={18} />
+          </Link>
           <p className="fine-note">{dict.home.aboutNote}</p>
         </div>
       </section>
@@ -118,23 +159,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="reasons-section section-block" id="why-us">
-        <div className="section-heading compact">
-          <p className="section-kicker">{dict.sections.reasons}</p>
-          <h2>{pages.why[locale]}</h2>
-          <p>{dict.home.reasonsLead}</p>
-        </div>
-        <div className="reason-mosaic">
-          <article className="reason-tile reason-main">
-            <span dir="ltr">01</span>
-            <h3>{primaryReason.title[locale]}</h3>
-            <p>{primaryReason.text[locale]}</p>
-          </article>
-          <div className="reason-support">
-            {supportingReasons.map((reason, index) => (
-              <article key={reason.title.en} className="reason-tile">
-                <span dir="ltr">{String(index + 2).padStart(2, "0")}</span>
+        <div className="why-editorial">
+          <div className="why-heading">
+            <p className="section-kicker">{dict.sections.reasons}</p>
+            <h2>{pages.why[locale]}</h2>
+            <p>{dict.home.reasonsLead}</p>
+          </div>
+          <div className="reason-list">
+            {reasons.map((reason, index) => (
+              <article key={reason.title.en} className={`reason-line ${index === 2 ? "is-emphasized" : ""}`}>
+                <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{reason.title[locale]}</h3>
                 <p>{reason.text[locale]}</p>
+                <ArrowIcon aria-hidden="true" size={18} />
               </article>
             ))}
           </div>
@@ -142,7 +179,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="journey-section section-block">
-        <div className="section-heading">
+        <div className="section-heading journey-heading">
           <p className="section-kicker">{dict.sections.journey}</p>
           <h2>{dict.sections.journey}</h2>
           <p>{dict.home.journeyLead}</p>
@@ -153,6 +190,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <span dir="ltr">0{index + 1}</span>
               <h3>{step.title[locale]}</h3>
               <p>{step.text[locale]}</p>
+              {index === journey.length - 1 ? (
+                <Link className="text-link" href={localizedPath(locale, "/contact")}>
+                  {dict.actions.requestConsultation}
+                  <ArrowIcon aria-hidden="true" size={18} />
+                </Link>
+              ) : null}
             </article>
           ))}
         </div>
@@ -161,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="final-cta section-block">
         <div>
           <p className="section-kicker">{dict.sections.finalContact}</p>
-          <h2>{coreCopy.closing[locale]}</h2>
+          <h2>{closingTitle}</h2>
         </div>
         <ContactActions locale={locale} />
       </section>

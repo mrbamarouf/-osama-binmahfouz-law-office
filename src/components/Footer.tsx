@@ -13,13 +13,13 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
+        <div className="footer-statement">
+          <Logo locale={locale} variant="full" />
+          <p>{identity.role[locale]}</p>
+          <p>{contact.licenseDisplay[locale]} · {contact.city[locale]}</p>
+        </div>
         <div className="footer-grid">
-          <div className="footer-brand">
-            <Logo locale={locale} variant="full" />
-            <p>{identity.role[locale]}</p>
-            <p>{contact.licenseDisplay[locale]}</p>
-          </div>
-          <div>
+          <div className="footer-group footer-services">
             <h2>{pages.services[locale]}</h2>
             <ul className="footer-links">
               {services.map((service) => (
@@ -29,7 +29,7 @@ export function Footer({ locale }: { locale: Locale }) {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="footer-group">
             <h2>{dict.sections.contactData}</h2>
             <ul className="footer-contact">
               <li>
@@ -46,7 +46,7 @@ export function Footer({ locale }: { locale: Locale }) {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="footer-group">
             <h2>{dict.sections.legalPages}</h2>
             <ul className="footer-links">
               <li><Link href={localizedPath(locale, "/privacy")}>{pages.privacy[locale]}</Link></li>

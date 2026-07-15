@@ -78,7 +78,7 @@ export const services: Service[] = [
       ar: "يركز المكتب على الدفاع في مراحل الدعوى الجزائية المختلفة، مع حماية الحقوق ومتابعة ما يلزم لضمان تحقيق العدالة وفق المعلومات المتاحة في كل حالة.",
       en: "The office focuses on defense through the different stages of criminal proceedings, protecting rights and following what is needed to ensure justice according to the information available in each case."
     },
-    image: "/images/court-interior.jpg"
+    image: "/images/legal-majlis-v3.webp"
   },
   {
     slug: "consultations-contracts",
@@ -94,7 +94,7 @@ export const services: Service[] = [
       ar: "تغطي الخدمة صياغة ومراجعة العقود والاتفاقيات ووضع الشروط والأحكام، إلى جانب تقديم استشارات قانونية دقيقة تساعد على وضوح الالتزامات وحماية المصالح.",
       en: "This service covers drafting and reviewing contracts and agreements, setting terms and conditions, and providing precise legal consultations that clarify obligations and protect interests."
     },
-    image: "/images/legal-books.jpg"
+    image: "/images/legal-papers-v3.webp"
   },
   {
     slug: "labor-cases",
@@ -110,7 +110,7 @@ export const services: Service[] = [
       ar: "تعنى الخدمة بحماية حقوق العاملين وأصحاب العمل، وما يرتبط بإنهاء الخدمات والفصل التعسفي وتسوية النزاعات العمالية.",
       en: "This service addresses the rights of employees and employers, including end-of-service matters, unfair dismissal, and the settlement of labor disputes."
     },
-    image: "/images/office-meeting.jpg"
+    image: "/images/legal-majlis-v3.webp"
   },
   {
     slug: "civil-commercial-cases",
@@ -126,7 +126,7 @@ export const services: Service[] = [
       ar: "تشمل الخدمة التعامل مع النزاعات المدنية والتجارية، والمطالبات المالية، والتعويضات، والوكالات التجارية، من خلال معالجة قانونية واضحة.",
       en: "This service includes handling civil and commercial disputes, financial claims, compensation, and commercial agencies through clear legal handling."
     },
-    image: "/images/atelier-palm-museum.jpg"
+    image: "/images/jeddah-courtyard-v3.webp"
   },
   {
     slug: "regulations-bylaws",
@@ -142,7 +142,7 @@ export const services: Service[] = [
       ar: "تقوم الخدمة على تقديم حلول قانونية متوافقة مع الأنظمة واللوائح، بما يساعد على حماية المصالح وتجنب المخاطر النظامية.",
       en: "This service provides legal solutions aligned with regulations and bylaws, helping protect interests and avoid regulatory risks."
     },
-    image: "/images/legal-files.jpg"
+    image: "/images/mashrabiya-shadow-v3.webp"
   },
   {
     slug: "criminal-courts",
@@ -158,7 +158,7 @@ export const services: Service[] = [
       ar: "تختص الخدمة بالدفاع والتحقيق وتمثيل الموكلين أمام جميع أنواع المحاكم الجنائية، ضمن نطاق الوقائع والمستندات ذات الصلة.",
       en: "This service concerns defense, investigation, and representing clients before all types of criminal courts within the scope of relevant facts and documents."
     },
-    image: "/images/legal-gavel.jpg"
+    image: "/images/mashrabiya-shadow-v3.webp"
   },
   {
     slug: "enforcement-courts",
@@ -174,7 +174,7 @@ export const services: Service[] = [
       ar: "تشمل الخدمة متابعة وتنفيذ الأحكام والسندات التنفيذية، وإجراءات الحجز وبيع المنقول والعقار وفق ما تتطلبه الحالة.",
       en: "This service includes following up and enforcing judgments and enforceable instruments, including attachment procedures and the sale of movable and real estate property as required by the case."
     },
-    image: "/images/atelier-corridor.jpg"
+    image: "/images/legal-papers-v3.webp"
   }
 ];
 
