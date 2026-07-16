@@ -14,6 +14,11 @@ const shortName: Record<Locale, string> = {
   en: "Osama Bin Mahfouz"
 };
 
+const compactPractice: Record<Locale, string> = {
+  ar: "للمحاماة والاستشارات القانونية",
+  en: "Law Office & Legal Consultancy"
+};
+
 export function Logo({ locale, compact = false, variant }: LogoProps) {
   const resolvedVariant = variant ?? (compact ? "symbol" : "responsive");
 
@@ -43,7 +48,7 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
             />
             <span className="logo-text">
               <strong>{shortName[locale]}</strong>
-              <small>{identity.practice[locale]}</small>
+              <small>{compactPractice[locale]}</small>
             </span>
           </span>
         </>

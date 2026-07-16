@@ -1060,10 +1060,83 @@
 
   body {
     padding-bottom: 0;
+    background:
+      linear-gradient(90deg, rgba(220, 205, 183, 0.1) 0 1px, transparent 1px) 50% 0 / 112px 100%,
+      var(--warm-ivory);
   }
 
   #main-content {
     overflow-x: hidden;
+  }
+
+  .site-header {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .header-inner {
+    width: calc(100vw - 16px);
+    min-height: 76px;
+    gap: 6px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .logo-compact-set {
+    width: min(196px, calc(100vw - 126px));
+    max-width: min(196px, calc(100vw - 126px));
+    gap: 6px;
+  }
+
+  .logo-compact-set .logo-mark {
+    width: auto;
+    height: 48px;
+  }
+
+  .logo-text {
+    max-width: calc(100% - 65px);
+    gap: 2px;
+  }
+
+  .logo-text strong,
+  .logo-text small {
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .logo-text strong {
+    font-size: 17px;
+    line-height: 1.16;
+  }
+
+  .logo-text small {
+    font-size: 12px;
+    line-height: 1.18;
+  }
+
+  [dir="ltr"] .logo-text strong,
+  [dir="ltr"] .logo-text small {
+    font-family: var(--font-latin), var(--font-arabic), sans-serif;
+  }
+
+  [dir="ltr"] .logo-text strong {
+    font-size: 17px;
+  }
+
+  [dir="ltr"] .logo-text small {
+    font-size: 12px;
+  }
+
+  .language-link,
+  .menu-button,
+  .icon-button {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    min-height: 48px;
   }
 
   h1,
@@ -1076,6 +1149,18 @@
   [dir="ltr"] .service-detail-copy h1 {
     font-size: 38px;
     line-height: 1.14;
+  }
+
+  .hero-copy h1 {
+    max-width: 11.5ch;
+    font-size: clamp(38px, 10.2vw, 42px);
+    line-height: 1.16;
+  }
+
+  [dir="ltr"] .hero-copy h1 {
+    max-width: 13ch;
+    font-size: clamp(36px, 9.2vw, 40px);
+    line-height: 1.15;
   }
 
   h2,
@@ -1192,24 +1277,27 @@
   }
 
   .mobile-menu-top .logo-lockup-full {
-    width: 105px;
-    max-width: 105px;
+    width: 100px;
+    max-width: 100px;
     max-height: 64px;
     flex: 0 0 auto;
   }
 
   .mobile-menu-top .logo-lockup-full .logo-official-full {
     width: auto !important;
-    max-width: 105px;
+    max-width: 100px;
     max-height: 64px;
   }
 
   .mobile-menu-top .icon-button {
-    flex: 0 0 44px;
+    flex: 0 0 48px;
   }
 
   .mobile-nav {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     margin-top: 24px;
     border-block: 1px solid rgba(57, 68, 49, 0.14);
   }
@@ -1217,7 +1305,7 @@
   .mobile-nav a {
     min-height: 56px;
     padding-block: 0;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.2;
   }
 
@@ -1231,7 +1319,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
-    margin-top: 18px;
+    margin-top: auto;
     padding-bottom: env(safe-area-inset-bottom);
   }
 
@@ -1244,13 +1332,12 @@
 
   .hero-section,
   [dir="ltr"] .hero-section {
-    padding: 32px 20px 28px;
-    gap: 18px;
+    padding: 28px 20px 26px;
+    gap: 16px;
   }
 
   .trust-strip {
-    min-height: 60px;
-    overflow: hidden;
+    display: none;
   }
 
   .trust-strip-inner {
@@ -1283,17 +1370,22 @@
   .quote-section.section-block {
     max-height: 650px;
     gap: 18px;
-    padding: 56px 20px;
+    padding: 60px 20px;
   }
 
   .quote-visual {
-    height: 150px;
+    height: clamp(180px, 50vw, 220px);
   }
 
   .quote-text blockquote,
   [dir="ltr"] .quote-text blockquote {
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.5;
+  }
+
+  [dir="ltr"] .quote-text blockquote {
+    font-size: 30px;
+    line-height: 1.45;
   }
 
   .about-section {
@@ -1349,11 +1441,10 @@
 
   .service-mobile-trigger strong,
   [dir="ltr"] .service-mobile-trigger strong {
-    display: -webkit-box;
-    overflow: hidden;
+    display: block;
+    overflow: visible;
     line-height: 1.18;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    white-space: normal;
   }
 
   .service-mobile-panel {
@@ -1378,7 +1469,7 @@
   }
 
   .journey-track {
-    gap: 28px;
+    gap: 30px;
   }
 
   .journey-track article,
@@ -1399,7 +1490,7 @@
 
   .journey-track article::after {
     top: 42px;
-    bottom: -28px;
+    bottom: -30px;
     inset-inline-start: 16px;
     background: rgba(181, 138, 71, 0.46);
   }
@@ -1435,7 +1526,7 @@
   }
 
   .journey-track .journey-cta {
-    min-height: 48px;
+    min-height: 52px;
     margin-top: 8px;
     padding: 0 18px;
     color: var(--soft-white);
@@ -1454,7 +1545,106 @@
   }
 
   .contact-actions a {
-    min-height: 48px;
+    min-height: 52px;
+  }
+
+  .hero-support {
+    display: block;
+    overflow: visible;
+    color: var(--charcoal);
+    font-size: 17px;
+    line-height: 1.78;
+    -webkit-line-clamp: unset;
+  }
+
+  .hero-actions .button {
+    min-height: 54px;
+  }
+
+  .hero-media {
+    height: clamp(300px, 82vw, 360px);
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .hero-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
+    font-size: 13px;
+  }
+
+  .hero-contact a {
+    min-height: 44px;
+    min-width: 0;
+  }
+
+  .hero-contact a:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .reason-line,
+  .reason-line.is-emphasized {
+    gap: 8px 14px;
+    padding: 22px 0;
+  }
+
+  .reason-line p,
+  .reason-line.is-emphasized p {
+    color: var(--muted);
+  }
+
+  .journey-track .journey-cta {
+    width: fit-content;
+    min-width: min(100%, 214px);
+  }
+
+  .final-cta .contact-actions a,
+  .contact-panel .contact-actions a,
+  .service-detail-body .contact-actions a {
+    min-height: 52px;
+  }
+
+  .footer-inner {
+    padding: 48px 20px calc(44px + env(safe-area-inset-bottom));
+  }
+
+  .footer-statement {
+    padding-bottom: 20px;
+  }
+
+  .site-footer .logo-lockup-full .logo-official-full {
+    width: min(120px, 34vw);
+  }
+
+  .footer-grid {
+    gap: 22px;
+    padding-top: 22px;
+  }
+
+  .footer-group h2 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    line-height: 1.25;
+  }
+
+  .footer-links li,
+  .footer-contact li {
+    margin-bottom: 8px;
+  }
+
+  .service-mobile-panel .text-link,
+  .service-detail-body aside a,
+  .footer-links a,
+  .footer-contact a,
+  .contact-lines a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    margin-top: 22px;
   }
 
   .mobile-contact-bar {
@@ -1488,22 +1678,29 @@
     padding-inline: 18px;
   }
 
+  .header-inner {
+    width: calc(100vw - 16px);
+    min-height: 76px;
+  }
+
   .logo-lockup-responsive .logo-official-full {
     display: none;
   }
 
   .logo-compact-set {
-    max-width: 118px;
+    width: min(194px, calc(100vw - 126px));
+    max-width: min(194px, calc(100vw - 126px));
     gap: 6px;
   }
 
   .logo-compact-set .logo-mark {
-    width: 30px;
+    width: auto;
+    height: 48px;
   }
 
   .logo-text strong,
   .logo-text small {
-    max-width: 78px;
+    max-width: none;
   }
 
   .hero-copy h1,
@@ -1511,7 +1708,25 @@
     font-size: 38px;
   }
 
+  [dir="ltr"] .logo-text strong {
+    font-size: 16px;
+  }
+
+  [dir="ltr"] .logo-text small {
+    font-size: 11.5px;
+  }
+
   .button {
     padding-inline: 14px;
+  }
+
+  .contact-actions,
+  .final-cta .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions a:nth-child(2) {
+    grid-column: auto;
+    order: 0;
   }
 }
