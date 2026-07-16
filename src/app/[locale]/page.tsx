@@ -98,7 +98,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <Link key={service.slug} href={localizedPath(locale, `/services/${service.slug}`)}>
               <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
               {service.title[locale]}
-              <ArrowIcon aria-hidden="true" size={16} />
             </Link>
           ))}
         </div>
@@ -162,7 +161,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
           <div className="reason-list">
             {reasons.map((reason, index) => (
-              <article key={reason.title.en} className={`reason-line ${index === 2 ? "is-emphasized" : ""}`} tabIndex={0}>
+              <article key={reason.title.en} className="reason-line" tabIndex={0}>
                 <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{reason.title[locale]}</h3>
                 <p>{reason.text[locale]}</p>

@@ -31,7 +31,6 @@ export function ServiceExplorer({ locale }: { locale: Locale }) {
             <span className="service-index-title">
               <strong>{service.title[locale]}</strong>
             </span>
-            <ArrowIcon aria-hidden="true" size={18} />
           </Link>
         ))}
       </nav>
