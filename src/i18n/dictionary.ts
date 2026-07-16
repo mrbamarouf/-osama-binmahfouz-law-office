@@ -33,8 +33,11 @@ export const dictionary = {
     },
     home: {
       intro: "مكتب أسامه بن أحمد بن محفوظ للمحاماة",
-      aboutText:
-        "مكتب قانوني في جدة يقدم خدمات المحاماة والاستشارات القانونية وفق معلومات واضحة وتواصل مباشر، مع التركيز على السرية والاحترافية وفهم تفاصيل كل طلب.",
+      aboutParagraphs: [
+        "نؤمن بأن كل قضية تستحق دراسة دقيقة، وكل حق يستحق دفاعًا قائمًا على العلم والخبرة المهنية. لذلك نحرص على تقديم خدمات قانونية مبنية على فهم عميق للأنظمة واللوائح السعودية، مع دراسة كل قضية بعناية، ووضع الحلول القانونية المناسبة وفقًا لوقائعها.",
+        "نعتمد في عملنا على الشفافية والوضوح مع عملائنا، ونلتزم بالمحافظة على سرية المعلومات، وإطلاع العميل على جميع مراحل العمل، وتقديم الرأي القانوني بكل أمانة ومهنية، بما يساعده على اتخاذ القرار المناسب بثقة.",
+        "هدفنا هو بناء علاقة طويلة الأمد مع عملائنا، تقوم على الثقة والاحترافية، من خلال تقديم خدمات قانونية عالية الجودة، وتمثيل مصالحهم بأعلى درجات المسؤولية والالتزام."
+      ],
       reasonsLead:
         "المبادئ التالية هي طريقة العمل في التواصل ومتابعة الطلبات، دون وعود بنتائج أو أرقام غير موثقة.",
       journeyLead:
@@ -123,8 +126,11 @@ export const dictionary = {
     },
     home: {
       intro: "Osama bin Ahmed bin Mahfouz Law Firm",
-      aboutText:
-        "A law firm in Jeddah providing advocacy and legal consultation services through clear information and direct communication, with attention to confidentiality, professionalism, and understanding the details of each request.",
+      aboutParagraphs: [
+        "We believe that every case deserves careful examination, and that every right deserves a defence founded on sound legal knowledge and professional experience. We therefore provide legal services grounded in a thorough understanding of Saudi laws and regulations, carefully assessing the facts of each matter and developing the appropriate legal solutions accordingly.",
+        "Our practice is founded on transparency and clear communication with our clients. We are committed to maintaining the confidentiality of all information, keeping clients informed throughout every stage of their matter, and providing legal advice with integrity and professionalism to enable them to make informed decisions with confidence.",
+        "Our objective is to build long-term relationships with our clients based on trust and professionalism by delivering high-quality legal services and representing their interests with the highest standards of responsibility and commitment."
+      ],
       reasonsLead:
         "The following principles guide communication and request follow-up, without unverified promises, numbers, or claims.",
       journeyLead:

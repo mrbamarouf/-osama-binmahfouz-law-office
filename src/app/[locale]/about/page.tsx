@@ -21,7 +21,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <>
       <PageHero title={dict.pages.aboutTitle} eyebrow={identity.practice[locale]}>
-        <p>{dict.home.aboutText}</p>
+        <div className="about-paragraphs">
+          {dict.home.aboutParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </PageHero>
       <section className="about-detail section-block">
         <div className="about-detail-copy">

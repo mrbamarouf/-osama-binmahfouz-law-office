@@ -147,7 +147,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="about-copy">
           <p className="section-kicker">{dict.sections.about}</p>
           <h2>{locale === "en" ? dict.pages.aboutTitle : identity.practice[locale]}</h2>
-          <p>{dict.home.aboutText}</p>
+          <div className="about-paragraphs">
+            {dict.home.aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <div className="office-lines">
             <span>{identity.name[locale]}</span>
             <strong>{identity.role[locale]}</strong>
