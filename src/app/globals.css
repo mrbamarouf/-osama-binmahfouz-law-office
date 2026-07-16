@@ -1628,6 +1628,30 @@ p {
   min-height: auto;
 }
 
+.checkbox-group {
+  display: grid;
+  gap: 8px;
+}
+
+.consultation-form input[aria-invalid="true"],
+.consultation-form select[aria-invalid="true"],
+.consultation-form textarea[aria-invalid="true"] {
+  border-color: #9f2f2f;
+  box-shadow: 0 0 0 1px rgba(159, 47, 47, 0.12);
+}
+
+.field-error {
+  color: #8f2525;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.consultation-form button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
 .form-success {
   grid-column: 1 / -1;
   padding: 12px 14px;

@@ -53,7 +53,15 @@ export const dictionary = {
       preferredEmail: "بريد إلكتروني",
       privacy: "أوافق على سياسة الخصوصية",
       success: "شكرًا لك. يمكنك متابعة الطلب عبر الواتساب أو الاتصال المباشر.",
-      chooseService: "اختر الخدمة"
+      chooseService: "اختر الخدمة",
+      errors: {
+        name: "يرجى إدخال الاسم الكامل.",
+        phone: "يرجى إدخال رقم الجوال.",
+        email: "يرجى إدخال بريد إلكتروني صحيح.",
+        service: "يرجى اختيار الخدمة المطلوبة.",
+        message: "يرجى كتابة تفاصيل الطلب.",
+        privacy: "يرجى الموافقة على سياسة الخصوصية."
+      }
     },
     pages: {
       aboutTitle: "عن المكتب",
@@ -135,7 +143,15 @@ export const dictionary = {
       preferredEmail: "Email",
       privacy: "I agree to the privacy policy",
       success: "Thank you. You can continue through WhatsApp or direct phone contact.",
-      chooseService: "Choose a service"
+      chooseService: "Choose a service",
+      errors: {
+        name: "Please enter your full name.",
+        phone: "Please enter your phone number.",
+        email: "Please enter a valid email address.",
+        service: "Please choose the required service.",
+        message: "Please enter the request details.",
+        privacy: "Please agree to the privacy policy."
+      }
     },
     pages: {
       aboutTitle: "Legal Representation & Advisory",
