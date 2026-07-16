@@ -11,7 +11,7 @@ type LogoProps = {
 
 const shortName: Record<Locale, string> = {
   ar: "أسامه بن أحمد بن محفوظ",
-  en: "Osama Bin Mahfouz"
+  en: "Osama bin Ahmed bin Mahfouz"
 };
 
 const compactPractice: Record<Locale, string> = {

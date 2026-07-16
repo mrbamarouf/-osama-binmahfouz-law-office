@@ -78,7 +78,7 @@ export default async function LocaleLayout({
       className={`${kufi.variable} ${plexArabic.variable} ${manrope.variable}`}
     >
       <body>
-        <IntroOverlay />
+        <IntroOverlay locale={locale} />
         <script
           type="application/ld+json"
           suppressHydrationWarning

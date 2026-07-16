@@ -1138,6 +1138,15 @@ p {
   display: none;
 }
 
+.service-mobile-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-mobile-image img {
+  object-fit: cover;
+}
+
 .why-editorial {
   display: grid;
   grid-template-columns: minmax(280px, 0.36fr) minmax(0, 0.64fr);

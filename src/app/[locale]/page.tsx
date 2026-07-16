@@ -29,9 +29,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </>
     ) : (
       <>
-        With you at every step,
+        With you through
         <br />
-        until your rights are protected.
+        each legal step.
       </>
     );
   const closingTitle =
@@ -45,7 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <>
         Your trust is our responsibility.
         <br />
-        Your satisfaction is our goal.
+        Professional service is our commitment.
       </>
     );
   const quoteLines =
@@ -55,8 +55,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           "لذلك نلتزم بخدمتكم بتمثيل قانوني قوي، وحلول مدروسة، ودفاع لا يتزعزع."
         ]
       : [
-          "Your rights are not negotiable. Your trust is never taken lightly.",
-          "Strong defense, sound solutions, firm advocacy."
+          "Your rights deserve careful legal handling.",
+          "Considered representation, studied solutions, and firm advocacy."
         ];
 
   return (
@@ -96,7 +96,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
         </div>
         <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Firm summary"}>
-          <span><strong dir="ltr">07</strong>{dict.sections.selectedServices}</span>
+          <span><strong dir="ltr">{String(services.length).padStart(2, "0")}</strong>{dict.sections.selectedServices}</span>
           <span>{contact.city[locale]}</span>
           <span>{contact.licenseDisplay[locale]}</span>
         </div>

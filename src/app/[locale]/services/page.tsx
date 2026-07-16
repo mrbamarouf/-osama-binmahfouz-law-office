@@ -27,7 +27,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         {services.map((service, index) => (
           <article className="directory-item" key={service.slug}>
             <div className="directory-image">
-              <Image src={service.image} alt={service.title[locale]} fill sizes="(min-width: 1024px) 28vw, 100vw" />
+              <Image src={service.image} alt={service.title[locale]} fill sizes="(min-width: 1024px) 28vw, 100vw" priority={index === 0} />
             </div>
             <div className="directory-copy">
               <span dir="ltr">{String(index + 1).padStart(2, "0")}</span>

@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { identity } from "@/data/site";
+import type { Locale } from "@/i18n/routing";
 
 let introPlayedThisDocument = false;
 
-export function IntroOverlay() {
+export function IntroOverlay({ locale }: { locale: Locale }) {
   const [visible, setVisible] = useState(() => !introPlayedThisDocument);
   const [exiting, setExiting] = useState(false);
   const [canSkip, setCanSkip] = useState(false);
@@ -59,7 +61,7 @@ export function IntroOverlay() {
         <span className="intro-line intro-line-top" aria-hidden="true" />
         <Image
           src="/brand/osama-logo-official.svg"
-          alt="شعار أسامه بن محفوظ للمحاماة والاستشارات القانونية"
+          alt={identity.name[locale]}
           width={489}
           height={488}
           className="intro-logo"

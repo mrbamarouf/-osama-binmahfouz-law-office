@@ -122,7 +122,7 @@ export const dictionary = {
       contactData: "Contact Details"
     },
     home: {
-      intro: "Osama Bin Mahfouz Law Firm",
+      intro: "Osama bin Ahmed bin Mahfouz Law Firm",
       aboutText:
         "A law firm in Jeddah providing advocacy and legal consultation services through clear information and direct communication, with attention to confidentiality, professionalism, and understanding the details of each request.",
       reasonsLead:
