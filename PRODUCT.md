@@ -10,7 +10,7 @@ Arabic-first and English-speaking visitors in Jeddah who need a clear way to und
 
 ## Product Purpose
 
-Present Osama bin Ahmed bin Salem bin Mahfouz as a lawyer and legal consultant in Jeddah through a premium bilingual website that communicates trust, clarity, confidentiality, and practical access without inventing credentials, metrics, teams, awards, client stories, or legal guarantees.
+Present Osama bin Ahmed bin Mahfouz as a lawyer and legal consultant in Jeddah through a premium bilingual website that communicates trust, clarity, confidentiality, and practical access without inventing credentials, metrics, teams, awards, client stories, or legal guarantees.
 
 ## Brand Personality
 

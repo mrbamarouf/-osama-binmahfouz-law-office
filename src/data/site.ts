@@ -31,8 +31,8 @@ export const contact = {
 
 export const identity = {
   name: {
-    ar: "أسامه بن أحمد بن سالم بن محفوظ",
-    en: "Osama bin Ahmed bin Salem bin Mahfouz"
+    ar: "أسامه بن أحمد بن محفوظ",
+    en: "Osama bin Ahmed bin Mahfouz"
   } satisfies LocalizedText,
   role: {
     ar: "المحامي والمستشار القانوني",
@@ -260,8 +260,8 @@ export const pages = {
 
 export const seo = {
   description: {
-    ar: "موقع مكتب أسامه بن أحمد بن سالم بن محفوظ، المحامي والمستشار القانوني في جدة، لخدمات قانونية واضحة وتواصل مباشر.",
-    en: "Website of Osama bin Ahmed bin Salem bin Mahfouz, lawyer and legal consultant in Jeddah, for clear legal services and direct contact."
+    ar: "موقع مكتب أسامه بن أحمد بن محفوظ، المحامي والمستشار القانوني في جدة، لخدمات قانونية واضحة وتواصل مباشر.",
+    en: "Website of Osama bin Ahmed bin Mahfouz, lawyer and legal consultant in Jeddah, for clear legal services and direct contact."
   },
   keywords: {
     ar: ["مكتب محاماة في جدة", "محامي ومستشار قانوني في جدة", "خدمات قانونية في جدة"],
