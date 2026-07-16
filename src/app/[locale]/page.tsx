@@ -145,8 +145,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
         </div>
         <div className="about-copy">
-          <p className="section-kicker">{dict.sections.about}</p>
-          <h2>{locale === "en" ? dict.pages.aboutTitle : identity.practice[locale]}</h2>
+          <h2>{dict.sections.about}</h2>
           <div className="about-paragraphs">
             {dict.home.aboutParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -174,12 +173,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       <section className="reasons-section section-block" id="why-us">
-        <div className="why-editorial">
-          <div className="why-heading">
-            <p className="section-kicker">{dict.sections.reasons}</p>
-            <h2>{pages.why[locale]}</h2>
-            <p>{dict.home.reasonsLead}</p>
-          </div>
+        <div className="why-editorial why-editorial-compact">
           <div className="reason-list">
             {reasons.map((reason, index) => (
               <article key={reason.title.en} className="reason-line" tabIndex={0}>

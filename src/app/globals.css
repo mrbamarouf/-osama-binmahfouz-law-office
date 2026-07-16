@@ -982,6 +982,8 @@ p {
 
 .about-copy h2 {
   max-width: 18ch;
+  font-size: clamp(2rem, 2.55vw, 2.55rem);
+  line-height: 1.22;
 }
 
 .office-lines {
@@ -1167,6 +1169,10 @@ p {
 
 .why-heading h2 {
   margin-bottom: 18px;
+}
+
+.why-editorial-compact {
+  display: block;
 }
 
 .reason-list {
