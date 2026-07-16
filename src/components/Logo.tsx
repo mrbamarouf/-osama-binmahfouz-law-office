@@ -16,7 +16,7 @@ const shortName: Record<Locale, string> = {
 
 const compactPractice: Record<Locale, string> = {
   ar: "للمحاماة والاستشارات القانونية",
-  en: "Law Office & Legal Consultancy"
+  en: "Law Firm & Legal Consultancy"
 };
 
 export function Logo({ locale, compact = false, variant }: LogoProps) {

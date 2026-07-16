@@ -1,6 +1,6 @@
 ---
-name: Osama Bin Mahfouz Law Office
-description: Jeddah Daylight Legal Atelier identity for a bilingual Saudi law-office website.
+name: Osama Bin Mahfouz Law Firm
+description: Jeddah Daylight Legal Atelier identity for a bilingual Saudi law-firm website.
 colors:
   warm-ivory: "#F7F3EA"
   soft-white: "#FFFCF7"
@@ -45,7 +45,7 @@ components:
     padding: "14px 22px"
 ---
 
-# Design System: Osama Bin Mahfouz Law Office
+# Design System: Osama Bin Mahfouz Law Firm
 
 ## 1. Overview
 

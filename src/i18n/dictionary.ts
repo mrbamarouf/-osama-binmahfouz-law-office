@@ -105,7 +105,7 @@ export const dictionary = {
     sections: {
       selectedServices: "Practice Areas",
       quote: "Professional Commitment",
-      about: "About the Office",
+      about: "About the Firm",
       services: "Legal Services",
       reasons: "Why Choose Us",
       journey: "Contact Journey",
@@ -114,9 +114,9 @@ export const dictionary = {
       contactData: "Contact Details"
     },
     home: {
-      intro: "Osama Bin Mahfouz Law Office",
+      intro: "Osama Bin Mahfouz Law Firm",
       aboutText:
-        "A law office in Jeddah providing advocacy and legal consultation services through clear information and direct communication, with attention to confidentiality, professionalism, and understanding the details of each request.",
+        "A law firm in Jeddah providing advocacy and legal consultation services through clear information and direct communication, with attention to confidentiality, professionalism, and understanding the details of each request.",
       reasonsLead:
         "The following principles guide communication and request follow-up, without unverified promises, numbers, or claims.",
       journeyLead:
@@ -148,12 +148,12 @@ export const dictionary = {
     },
     legal: {
       privacyIntro:
-        "This policy explains how information may be handled when a visitor uses the website or contacts the office directly.",
+        "This policy explains how information may be handled when a visitor uses the website or contacts the firm directly.",
       privacyItems: [
         "When using phone, WhatsApp, or email, contact information is transferred through the service selected by the visitor."
       ],
       disclaimerIntro:
-        "The information published on this website introduces the office and its legal services, and does not constitute legal advice for any specific matter.",
+        "The information published on this website introduces the firm and its legal services, and does not constitute legal advice for any specific matter.",
       disclaimerItems: [
         "No legal representation or professional relationship is created merely by browsing the website or sending a form.",
         "Each legal matter requires review of its details and documents before an opinion or suitable step is determined.",

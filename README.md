@@ -1,6 +1,6 @@
-# Osama Bin Mahfouz Law Office
+# Osama Bin Mahfouz Law Firm
 
-Premium bilingual website for Osama bin Ahmed bin Salem bin Mahfouz Law Office.
+Premium bilingual website for Osama bin Ahmed bin Salem bin Mahfouz Law Firm.
 
 ## Stack
 

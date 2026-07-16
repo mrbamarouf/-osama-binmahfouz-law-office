@@ -17,9 +17,9 @@ The following earlier assets remain in the repository for traceability, but are 
 - `atelier-documents.jpg`: https://unsplash.com/photos/two-people-are-signing-a-document-at-a-desk-EtiHiyDkld0
 - `atelier-signing.jpg`: https://unsplash.com/photos/man-signing-a-document-with-a-pen-QI6NLgN5XnM
 
-The real office-wall reference photo was visible in the WhatsApp temporary documents during review, but the file was removed by WhatsApp cleanup before it could be copied into `public/images`. It is therefore not used in the current UI.
+The real firm-wall reference photo was visible in the WhatsApp temporary documents during review, but the file was removed by WhatsApp cleanup before it could be copied into `public/images`. It is therefore not used in the current UI.
 
-The official office logo was extracted from the provided Illustrator PDF attachment `os-new logo-1.pdf`. Vector paths from the gold logo page were converted directly into transparent SVG assets in `public/brand`, with PNG fallbacks generated from those SVGs:
+The official firm logo was extracted from the provided Illustrator PDF attachment `os-new logo-1.pdf`. Vector paths from the gold logo page were converted directly into transparent SVG assets in `public/brand`, with PNG fallbacks generated from those SVGs:
 
 - `osama-logo-official.svg`
 - `osama-symbol-official.svg`

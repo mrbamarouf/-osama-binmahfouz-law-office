@@ -10,7 +10,7 @@ export type Service = {
   image: string;
 };
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://osama-binmahfouz-law-office.vercel.app";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://obmlawfirm.com";
 
 export const contact = {
   phoneDisplay: "0537515551",
@@ -40,7 +40,7 @@ export const identity = {
   } satisfies LocalizedText,
   practice: {
     ar: "للمحاماة والاستشارات القانونية",
-    en: "Law Office and Legal Consultations"
+    en: "Law Firm and Legal Consultations"
   } satisfies LocalizedText
 };
 
@@ -76,7 +76,7 @@ export const services: Service[] = [
     },
     detail: {
       ar: "يركز المكتب على الدفاع في مراحل الدعوى الجزائية المختلفة، مع حماية الحقوق ومتابعة ما يلزم لضمان تحقيق العدالة وفق المعلومات المتاحة في كل حالة.",
-      en: "The office focuses on defense through the different stages of criminal proceedings, protecting rights and following what is needed to ensure justice according to the information available in each case."
+      en: "The firm focuses on defense through the different stages of criminal proceedings, protecting rights and following what is needed to ensure justice according to the information available in each case."
     },
     image: "/images/services/criminal-cases-v3.webp"
   },
@@ -265,7 +265,7 @@ export const seo = {
   },
   keywords: {
     ar: ["مكتب محاماة في جدة", "محامي ومستشار قانوني في جدة", "خدمات قانونية في جدة"],
-    en: ["Law office in Jeddah", "Lawyer and legal consultant in Jeddah", "Legal services in Jeddah"]
+    en: ["Law firm in Jeddah", "Lawyer and legal consultant in Jeddah", "Legal services in Jeddah"]
   }
 };
 

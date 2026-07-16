@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Arabic-first and English-speaking visitors in Jeddah who need a clear way to understand the office, review approved legal service areas, and contact the lawyer directly by phone, WhatsApp, email, or a front-end consultation form.
+Arabic-first and English-speaking visitors in Jeddah who need a clear way to understand the firm, review approved legal service areas, and contact the lawyer directly by phone, WhatsApp, email, or a front-end consultation form.
 
 ## Product Purpose
 

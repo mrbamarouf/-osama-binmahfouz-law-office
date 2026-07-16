@@ -95,7 +95,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             priority
           />
         </div>
-        <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Office summary"}>
+        <div className="hero-meta" aria-label={locale === "ar" ? "ملخص المكتب" : "Firm summary"}>
           <span><strong dir="ltr">07</strong>{dict.sections.selectedServices}</span>
           <span>{contact.city[locale]}</span>
           <span>{contact.licenseDisplay[locale]}</span>
