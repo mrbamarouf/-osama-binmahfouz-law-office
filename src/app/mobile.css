@@ -134,7 +134,7 @@
     width: auto;
     max-width: min(236px, calc(100vw - 120px));
     display: inline-flex;
-    gap: 10px;
+    gap: 8px;
     direction: rtl;
   }
 
@@ -146,6 +146,12 @@
 
   .logo-text {
     max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    text-align: right;
   }
 
   .logo-text strong {
@@ -159,7 +165,16 @@
   }
 
   .site-header .logo-text small {
-    display: none;
+    display: block;
+    max-width: none;
+    overflow: visible;
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: right;
+    text-overflow: clip;
+    white-space: nowrap;
   }
 
   [dir="rtl"] .site-header .logo-text {
@@ -1139,7 +1154,7 @@
   .logo-compact-set {
     width: auto;
     max-width: min(236px, calc(100vw - 120px));
-    gap: 10px;
+    gap: 8px;
     direction: rtl;
   }
 
@@ -1151,7 +1166,12 @@
 
   .logo-text {
     max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     gap: 2px;
+    text-align: right;
   }
 
   .logo-text strong {
@@ -1168,7 +1188,16 @@
   }
 
   .site-header .logo-text small {
-    display: none;
+    display: block;
+    max-width: none;
+    overflow: visible;
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: right;
+    text-overflow: clip;
+    white-space: nowrap;
   }
 
   [dir="ltr"] .logo-text strong,
@@ -1742,17 +1771,22 @@
   .logo-compact-set {
     width: auto;
     max-width: calc(100vw - 118px);
-    gap: 10px;
+    gap: 8px;
   }
 
   .logo-compact-set .logo-mark {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 
   .logo-text strong {
     max-width: none;
     font-size: 15px;
+    line-height: 1.1;
+  }
+
+  .site-header .logo-text small {
+    font-size: 9px;
     line-height: 1.1;
   }
 
