@@ -321,6 +321,16 @@
     margin: 0 auto;
   }
 
+  [dir="rtl"] .hero-copy h1 {
+    width: var(--wide);
+    max-width: var(--wide);
+    margin: 0 auto 8px;
+    font-size: clamp(20px, 5.55vw, 25px);
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+  }
+
   [dir="ltr"] .hero-copy h1 {
     max-width: 13ch;
   }

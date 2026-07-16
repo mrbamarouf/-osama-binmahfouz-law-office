@@ -22,11 +22,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
   const heroTitle =
     locale === "ar" ? (
-      <>
-        ثقتك مسؤولية…
-        <br />
-        وحقوقك أمانة
-      </>
+      "ثقتك مسؤولية… وحقوقك أمانة"
     ) : (
       <>
         Your Trust Is Our Responsibility…

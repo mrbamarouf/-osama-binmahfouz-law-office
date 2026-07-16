@@ -705,6 +705,16 @@ p {
   margin: 24px 0 18px;
 }
 
+[dir="rtl"] .hero-copy h1 {
+  width: max-content;
+  max-width: 100%;
+  margin: 24px auto 22px;
+  font-size: clamp(2.08rem, 3vw, 2.76rem);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
 [dir="ltr"] .hero-copy h1 {
   max-width: 18ch;
 }
