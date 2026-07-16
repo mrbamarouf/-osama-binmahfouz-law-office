@@ -47,15 +47,7 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
               unoptimized
             />
             <span className="logo-text">
-              <strong>
-                {locale === "ar" ? (
-                  <>
-                    أسامه بن أحمد
-                    <br />
-                    بن محفوظ
-                  </>
-                ) : shortName[locale]}
-              </strong>
+              <strong>{shortName[locale]}</strong>
               <small>{compactPractice[locale]}</small>
             </span>
           </span>
@@ -86,15 +78,7 @@ export function Logo({ locale, compact = false, variant }: LogoProps) {
             priority
             unoptimized
           />
-          <strong>
-            {locale === "ar" ? (
-              <>
-                أسامه بن أحمد
-                <br />
-                بن محفوظ
-              </>
-            ) : shortName[locale]}
-          </strong>
+          <strong>{shortName[locale]}</strong>
           <small>{identity.practice[locale]}</small>
         </span>
       ) : null}
