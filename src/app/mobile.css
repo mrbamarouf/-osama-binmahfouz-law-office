@@ -645,6 +645,10 @@
     padding: 56px 20px;
   }
 
+  .services-section + .reasons-section {
+    padding-top: 24px;
+  }
+
   .why-editorial {
     display: grid;
     grid-template-columns: 1fr;
@@ -653,6 +657,10 @@
 
   .why-editorial-compact {
     display: block;
+  }
+
+  .why-editorial-compact .section-kicker {
+    margin-bottom: 12px;
   }
 
   .why-heading {

@@ -174,6 +174,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <section className="reasons-section section-block" id="why-us">
         <div className="why-editorial why-editorial-compact">
+          <p className="section-kicker">{dict.sections.reasons}</p>
           <div className="reason-list">
             {reasons.map((reason, index) => (
               <article key={reason.title.en} className="reason-line" tabIndex={0}>

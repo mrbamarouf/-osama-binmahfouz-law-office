@@ -1146,6 +1146,14 @@ p {
   display: none;
 }
 
+.services-section {
+  margin-bottom: clamp(44px, 4.8vw, 72px);
+}
+
+.services-section + .reasons-section {
+  margin-top: clamp(28px, 3.6vw, 52px);
+}
+
 .service-mobile-image {
   position: relative;
   overflow: hidden;
@@ -1173,6 +1181,10 @@ p {
 
 .why-editorial-compact {
   display: block;
+}
+
+.why-editorial-compact .section-kicker {
+  margin-bottom: 18px;
 }
 
 .reason-list {
