@@ -48,6 +48,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         Your satisfaction is our goal.
       </>
     );
+  const quoteLines =
+    locale === "ar"
+      ? [
+          "حقوقكم ليست محل مساومة، وثقتكم ليست محل تهاون؛",
+          "لذلك نلتزم بخدمتكم بتمثيل قانوني قوي، وحلول مدروسة، ودفاع لا يتزعزع."
+        ]
+      : [
+          "Your rights are not negotiable. Your trust is never taken lightly.",
+          "Strong defense, sound solutions, firm advocacy."
+        ];
 
   return (
     <>
@@ -114,7 +124,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="quote-text">
           <p className="section-kicker">{dict.sections.quote}</p>
-          <blockquote>{coreCopy.quote[locale]}</blockquote>
+          <blockquote>
+            {quoteLines.map((line, index) => (
+              <span key={line}>
+                {line}
+                {index < quoteLines.length - 1 ? " " : ""}
+              </span>
+            ))}
+          </blockquote>
         </div>
       </section>
 

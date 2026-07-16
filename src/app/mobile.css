@@ -380,13 +380,15 @@
   }
 
   .quote-section.section-block {
-    width: 100%;
+    width: min(calc(100% - 40px), 390px);
     min-height: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 0;
-    padding: 56px 20px;
+    max-height: none;
+    display: block;
+    margin: 56px auto;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--deep-olive);
   }
 
   .quote-section::before {
@@ -396,22 +398,40 @@
   .quote-visual {
     width: 100%;
     min-height: 0;
-    height: clamp(150px, 42vw, 180px);
-    border-radius: var(--radius-sm);
+    height: clamp(180px, 51vw, 200px);
+    aspect-ratio: 16 / 9;
+    border-radius: 0;
+  }
+
+  .quote-visual img {
+    object-position: center 44%;
   }
 
   .quote-text {
     max-width: none;
+    padding: 24px;
+  }
+
+  .quote-text .section-kicker {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .quote-text blockquote,
   [dir="ltr"] .quote-text blockquote {
-    font-size: clamp(28px, 7.6vw, 32px);
-    line-height: 1.45;
+    font-size: clamp(28px, 6.8vw, 29px);
+    font-weight: 500;
+    line-height: 1.55;
+    text-wrap: balance;
   }
 
   [dir="ltr"] .quote-text blockquote {
-    line-height: 1.28;
+    line-height: 1.55;
+  }
+
+  .quote-text blockquote span {
+    display: block;
   }
 
   .about-section {
@@ -1368,24 +1388,25 @@
   }
 
   .quote-section.section-block {
-    max-height: 650px;
-    gap: 18px;
-    padding: 60px 20px;
+    width: min(calc(100% - 40px), 390px);
+    max-height: none;
+    margin: 56px auto;
+    padding: 0;
   }
 
   .quote-visual {
-    height: clamp(180px, 50vw, 220px);
+    height: clamp(180px, 51vw, 200px);
   }
 
   .quote-text blockquote,
   [dir="ltr"] .quote-text blockquote {
-    font-size: 32px;
-    line-height: 1.5;
+    font-size: clamp(28px, 6.8vw, 29px);
+    font-weight: 500;
+    line-height: 1.55;
   }
 
   [dir="ltr"] .quote-text blockquote {
-    font-size: 30px;
-    line-height: 1.45;
+    line-height: 1.55;
   }
 
   .about-section {
