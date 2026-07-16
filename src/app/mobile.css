@@ -1813,3 +1813,109 @@
     order: 0;
   }
 }
+
+@media (max-width: 767px) {
+  [dir="rtl"] .site-header {
+    padding-inline: 16px;
+  }
+
+  [dir="rtl"] .header-inner {
+    width: 100%;
+    min-height: 84px;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "actions brand";
+    gap: 6px;
+  }
+
+  [dir="rtl"] .header-inner > .logo-lockup {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    justify-self: stretch;
+    position: static;
+  }
+
+  [dir="rtl"] .header-actions {
+    justify-self: start;
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  [dir="rtl"] .site-header .language-link,
+  [dir="rtl"] .site-header .menu-button {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  [dir="rtl"] .site-header .logo-compact-set {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 4px;
+    position: static;
+  }
+
+  [dir="rtl"] .site-header .logo-compact-set .logo-mark {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    object-fit: contain;
+    position: static;
+  }
+
+  [dir="rtl"] .site-header .logo-text {
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    overflow: visible;
+    position: static;
+    text-align: right;
+  }
+
+  [dir="rtl"] .site-header .logo-text strong {
+    max-width: 100%;
+    overflow: visible;
+    color: var(--deep-olive);
+    font-size: clamp(19px, 5.2vw, 20px);
+    line-height: 1.18;
+    text-align: right;
+    text-overflow: clip;
+    text-wrap: balance;
+    white-space: normal;
+  }
+
+  [dir="rtl"] .site-header .logo-text small {
+    max-width: 100%;
+    overflow: visible;
+    font-size: clamp(9.5px, 2.7vw, 10.5px);
+    line-height: 1.2;
+    text-align: right;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 340px) {
+  [dir="rtl"] .site-header .logo-compact-set .logo-mark {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+  }
+
+  [dir="rtl"] .site-header .logo-text strong {
+    font-size: 18px;
+    line-height: 1.17;
+  }
+
+  [dir="rtl"] .site-header .logo-text small {
+    font-size: 9.25px;
+  }
+}
