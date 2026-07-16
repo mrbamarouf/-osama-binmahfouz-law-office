@@ -65,7 +65,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="hero-copy">
           <div className="hero-copy-inner">
             <p className="hero-intro">{dict.home.intro}</p>
-            <p className="hero-name">{identity.name[locale]}</p>
+            {locale === "en" ? <p className="hero-name">{identity.name[locale]}</p> : null}
             <p className="hero-role">{identity.role[locale]} · {contact.licenseDisplay[locale]}</p>
             <h1>{heroTitle}</h1>
             <p className="hero-support">{coreCopy.support[locale]}</p>
