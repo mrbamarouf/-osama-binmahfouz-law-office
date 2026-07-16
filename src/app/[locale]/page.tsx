@@ -23,15 +23,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const heroTitle =
     locale === "ar" ? (
       <>
-        معك في كل خطوة..
+        ثقتك مسؤولية…
         <br />
-        حتى يصل حقك
+        وحقوقك أمانة
       </>
     ) : (
       <>
-        With you through
+        Your Trust Is Our Responsibility…
         <br />
-        each legal step.
+        Your Rights Are Our Commitment.
       </>
     );
   const closingTitle =

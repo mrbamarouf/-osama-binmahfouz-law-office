@@ -46,8 +46,8 @@ export const identity = {
 
 export const coreCopy = {
   headline: {
-    ar: "معك في كل خطوة.. حتى يصل حقك",
-    en: "With you through each legal step."
+    ar: "ثقتك مسؤولية… وحقوقك أمانة",
+    en: "Your Trust Is Our Responsibility… Your Rights Are Our Commitment."
   } satisfies LocalizedText,
   support: {
     ar: "نقدم لك استشارات وحلولًا قانونية واضحة وفعالة، نضع خبرتنا بين يديك لتحصل على أفضل النتائج بأعلى درجات الاحترافية والسرية.",
