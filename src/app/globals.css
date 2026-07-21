@@ -978,6 +978,21 @@ p {
   max-width: 66ch;
 }
 
+.about-paragraphs p {
+  text-align: justify;
+  text-align-last: start;
+  text-justify: inter-word;
+  line-height: 1.88;
+}
+
+[dir="rtl"] .about-paragraphs p {
+  direction: rtl;
+}
+
+[dir="ltr"] .about-paragraphs p {
+  direction: ltr;
+}
+
 .about-detail {
   display: grid;
   grid-template-columns: minmax(0, 0.52fr) minmax(320px, 0.48fr);

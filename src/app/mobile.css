@@ -1321,6 +1321,18 @@
     line-height: 1.62;
   }
 
+  [dir="ltr"] .about-paragraphs p {
+    font-size: clamp(13px, 3.45vw, 14.5px);
+    hyphens: auto;
+    line-height: 1.86;
+  }
+
+  [dir="ltr"] .about-paragraphs {
+    width: calc(100% + 20px);
+    max-width: none;
+    margin-inline: -10px;
+  }
+
   small,
   .section-kicker,
   .hero-intro,
