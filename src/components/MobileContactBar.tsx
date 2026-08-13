@@ -21,12 +21,20 @@ export function MobileContactBar({ locale }: { locale: Locale }) {
       return () => globalThis.clearTimeout(fallbackTimer);
     }
 
-    const blockTargets = Array.from(document.querySelectorAll(".final-cta, .site-footer, .contact-page"));
+    const blockTargets = Array.from(document.querySelectorAll(".final-cta, .site-footer, .creator-credit, .contact-page"));
     const heroTargets = Array.from(document.querySelectorAll(".hero-section, .page-hero, .service-detail-hero"));
     const noHeroTimer = heroTargets.length ? null : globalThis.setTimeout(() => setInsideHero(false), 0);
+    const visibleBlocks = new Set<Element>();
     const blockObserver = new IntersectionObserver(
       (entries) => {
-        setBlocked(entries.some((entry) => entry.isIntersecting));
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleBlocks.add(entry.target);
+          } else {
+            visibleBlocks.delete(entry.target);
+          }
+        });
+        setBlocked(visibleBlocks.size > 0);
       },
       { rootMargin: "0px 0px -10% 0px", threshold: 0.04 }
     );

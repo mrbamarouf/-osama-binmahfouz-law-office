@@ -89,7 +89,9 @@ export const dictionary = {
       ]
     },
     footer: {
-      rights: "جميع الحقوق محفوظة"
+      rights: "جميع الحقوق محفوظة",
+      creatorCredit: "تجربة رقمية من طارق بامعروف",
+      creatorCreditLabel: "زيارة موقع طارق بامعروف"
     }
   },
   en: {
@@ -180,7 +182,9 @@ export const dictionary = {
       ]
     },
     footer: {
-      rights: "All rights reserved"
+      rights: "All rights reserved",
+      creatorCredit: "A Digital Experience by Tarik Bamarouf",
+      creatorCreditLabel: "Visit Tarik Bamarouf Portfolio"
     }
   }
 } as const;

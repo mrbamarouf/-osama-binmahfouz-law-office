@@ -1110,6 +1110,24 @@
     margin-top: 26px;
   }
 
+  .creator-credit {
+    min-height: calc(56px + env(safe-area-inset-bottom));
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    padding: 10px 20px calc(12px + env(safe-area-inset-bottom));
+    text-align: center;
+  }
+
+  .creator-credit-signature {
+    width: min(118px, 34vw);
+  }
+
+  .creator-credit span {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
   .mobile-contact-bar {
     position: fixed;
     inset-inline-start: auto;

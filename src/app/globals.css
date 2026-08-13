@@ -1832,6 +1832,45 @@ p {
   border-top: 1px solid rgba(255, 252, 247, 0.12);
 }
 
+.creator-credit {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 12px clamp(20px, 4vw, 48px);
+  color: rgba(255, 252, 247, 0.52);
+  background: #293321;
+  border-top: 1px solid rgba(255, 252, 247, 0.08);
+}
+
+.creator-credit-signature {
+  width: clamp(104px, 9vw, 132px);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.72;
+}
+
+.creator-credit span {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+[dir="rtl"].creator-credit span {
+  direction: rtl;
+}
+
+.creator-credit:hover,
+.creator-credit:focus-visible {
+  color: rgba(255, 252, 247, 0.76);
+}
+
+.creator-credit:hover .creator-credit-signature,
+.creator-credit:focus-visible .creator-credit-signature {
+  opacity: 0.9;
+}
+
 .mobile-contact-bar {
   position: fixed;
   inset-inline: 14px;
